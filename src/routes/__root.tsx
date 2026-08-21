@@ -19,23 +19,16 @@ import { BackToTop } from "../components/site/BackToTop";
 import { useAutoReveal } from "../hooks/use-reveal";
 import { useScrollbarHover } from "../hooks/use-scrollbar-hover";
 
+import { NotFoundView } from "./$";
+
 function NotFoundComponent() {
   return (
-    <div className="min-h-screen bg-bg">
+    <div className="min-h-screen bg-bg flex flex-col justify-between">
       <Nav />
-      <div className="container-editorial flex min-h-screen flex-col justify-center pt-24">
-        <span className="eyebrow">Error 404</span>
-        <h1 className="display-mega mt-6 font-light text-ink">404</h1>
-        <p className="mt-6 max-w-md text-lg text-ink-muted">
-          This page is not on file. It may have been moved or never existed.
-        </p>
-        <Link
-          to="/"
-          className="link-underline mt-10 inline-block text-[12px] font-medium uppercase tracking-[0.16em] text-ink"
-        >
-          Return to the index →
-        </Link>
-      </div>
+      <main className="flex-1">
+        <NotFoundView />
+      </main>
+      <Footer />
     </div>
   );
 }
@@ -45,28 +38,43 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-bg px-6">
-      <div className="max-w-md text-center">
-        <span className="eyebrow">Unexpected</span>
-        <h1 className="mt-4 text-3xl font-light text-ink">This page didn't load.</h1>
-        <p className="mt-3 text-sm text-ink-muted">
-          Something went wrong on our end. Try again or return to the index.
-        </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-6 text-[12px] uppercase tracking-[0.16em]">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="link-underline text-ink"
-          >
-            Try again
-          </button>
-          <a href="/" className="link-underline text-ink">
-            Go home
-          </a>
+    <div className="min-h-screen bg-bg text-ink flex flex-col justify-between">
+      <Nav />
+      <main className="flex-1 flex items-center justify-center py-24 px-6">
+        <div className="max-w-lg w-full bg-section border border-rule/30 rounded-2xl p-8 sm:p-10 text-center space-y-6 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-500/10 border border-red-500/25 rounded-full text-xs font-mono font-semibold uppercase tracking-widest text-red-600">
+            <span>Diagnostic Alert // Processing Interrupted</span>
+          </div>
+
+          <div className="space-y-2">
+            <h1 className="text-2xl sm:text-3xl font-light text-ink uppercase tracking-wide">
+              Unable to Load Specification
+            </h1>
+            <p className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
+              An unexpected system error occurred during page compilation or data retrieval. You can try refreshing the route or return to the main directory.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-4 pt-2">
+            <button
+              onClick={() => {
+                router.invalidate();
+                reset();
+              }}
+              className="px-6 py-3 bg-ink text-white hover:bg-steel text-xs font-mono font-bold uppercase tracking-wider rounded transition-colors shadow-sm cursor-pointer"
+            >
+              Retry Connection
+            </button>
+            <a
+              href="/"
+              className="px-6 py-3 border border-rule/40 text-ink hover:border-ink text-xs font-mono font-bold uppercase tracking-wider rounded transition-colors cursor-pointer"
+            >
+              Return Home →
+            </a>
+          </div>
         </div>
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 }
