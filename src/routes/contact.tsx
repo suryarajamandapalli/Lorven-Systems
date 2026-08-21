@@ -31,7 +31,7 @@ const EnquirySchema = z.object({
 });
 
 export const submitEnquiry = createServerFn({ method: "POST" })
-  .validator((data: unknown) => EnquirySchema.parse(data))
+  .inputValidator((data: unknown) => EnquirySchema.parse(data))
   .handler(async ({ data }) => {
     // 1. Spam protection: Honeypot trap check
     if (data.honeypot && data.honeypot.trim().length > 0) {
