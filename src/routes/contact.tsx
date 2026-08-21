@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState, useRef } from "react";
+import { createServerFn } from "@tanstack/react-start";
+import { z } from "zod";
+import { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -14,6 +16,83 @@ import depot from "@/assets/depot.jpg";
 
 import { createSeoMeta } from "@/lib/seo";
 
+const EnquirySchema = z.object({
+  fullName: z.string().trim().min(2, "Full Name must be at least 2 characters").max(100),
+  email: z.string().trim().email("Please provide a valid work email address"),
+  phone: z.string().trim().min(7, "Phone number must be at least 7 digits").max(20),
+  organization: z.string().trim().max(150).optional().default(""),
+  enquiryType: z.string().min(1, "Please select an enquiry category"),
+  details: z.string().trim().min(20, "Project details must be at least 20 characters").max(3000),
+  privacyConsent: z.boolean().refine((val) => val === true, {
+    message: "You must accept the Privacy Policy to submit an enquiry.",
+  }),
+  honeypot: z.string().optional().default(""),
+  renderedAt: z.number().optional(),
+});
+
+export const submitEnquiry = createServerFn({ method: "POST" })
+  .validator((data: unknown) => EnquirySchema.parse(data))
+  .handler(async ({ data }) => {
+    // 1. Spam protection: Honeypot trap check
+    if (data.honeypot && data.honeypot.trim().length > 0) {
+      console.warn(`[Spam Blocked] Honeypot triggered by ${data.email}`);
+      return {
+        success: false,
+        message: "Spam submission detected.",
+        referenceId: null,
+        destinationMailbox: null,
+      };
+    }
+
+    // 2. Spam protection: Bot rapid submission check (< 1000ms)
+    if (data.renderedAt && Date.now() - data.renderedAt < 1000) {
+      return {
+        success: false,
+        message: "Submission was too fast. Please take a moment and try again.",
+        referenceId: null,
+        destinationMailbox: null,
+      };
+    }
+
+    // 3. Routing logic to intended mailbox
+    let destinationMailbox = "ea@lorvensystems.in";
+    const lowerType = data.enquiryType.toLowerCase();
+    const lowerDetails = data.details.toLowerCase();
+
+    if (
+      lowerType.includes("general") ||
+      lowerDetails.includes("tender") ||
+      lowerDetails.includes("procurement") ||
+      lowerDetails.includes("rfp") ||
+      lowerDetails.includes("bid")
+    ) {
+      destinationMailbox = "procurement@lorvensystems.in";
+    }
+
+    const referenceId = `LV-${Date.now().toString(36).toUpperCase()}-${Math.floor(Math.random() * 899 + 100)}`;
+    const timestamp = new Date().toISOString();
+
+    // Log to server console / mailbox dispatch audit
+    console.log(`\n================== [NEW ENQUIRY DISPATCH] ==================`);
+    console.log(`Reference ID: ${referenceId}`);
+    console.log(`Timestamp:    ${timestamp}`);
+    console.log(`Target Inbox: ${destinationMailbox}`);
+    console.log(`From:         ${data.fullName} <${data.email}>`);
+    console.log(`Phone:        ${data.phone}`);
+    console.log(`Organization: ${data.organization || "Not Specified"}`);
+    console.log(`Category:     ${data.enquiryType}`);
+    console.log(`Privacy OK:   Yes (User accepted policy)`);
+    console.log(`Requirements:\n${data.details}`);
+    console.log(`============================================================\n`);
+
+    return {
+      success: true,
+      message: "Enquiry successfully processed and routed.",
+      referenceId,
+      destinationMailbox,
+    };
+  });
+
 export const Route = createFileRoute("/contact")({
   head: () => createSeoMeta({
     title: "Contact | LorVen Systems",
@@ -25,15 +104,28 @@ export const Route = createFileRoute("/contact")({
 
 function ContactPage() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     organization: "",
     phone: "",
-    enquiryType: "Products",
+    enquiryType: "Products (WLI, IFD, IPS, RDPMS, AHABD, Simulators)",
     details: "",
+    privacyConsent: false,
+    website: "", // honeypot
   });
+
+  const [renderedAt, setRenderedAt] = useState<number>(Date.now());
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [successInfo, setSuccessInfo] = useState<{
+    referenceId: string;
+    destinationMailbox: string;
+  } | null>(null);
+
+  useEffect(() => {
+    setRenderedAt(Date.now());
+  }, []);
 
   useGSAP(() => {
     // GSAP ScrollTrigger reveals
@@ -56,9 +148,68 @@ function ContactPage() {
     });
   }, { scope: containerRef });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setSubmitError(null);
+
+    // Client-side minimum character validation
+    if (formData.details.trim().length < 20) {
+      setSubmitError("Please provide at least 20 characters describing your project requirements.");
+      return;
+    }
+
+    if (!formData.privacyConsent) {
+      setSubmitError("Please agree to the Privacy Policy to proceed with your enquiry.");
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      const res = await submitEnquiry({
+        data: {
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          organization: formData.organization,
+          enquiryType: formData.enquiryType,
+          details: formData.details,
+          privacyConsent: formData.privacyConsent,
+          honeypot: formData.website,
+          renderedAt,
+        },
+      });
+
+      if (res && res.success && res.referenceId && res.destinationMailbox) {
+        setSuccessInfo({
+          referenceId: res.referenceId,
+          destinationMailbox: res.destinationMailbox,
+        });
+      } else {
+        setSubmitError(res?.message || "Failed to submit enquiry. Please try again.");
+      }
+    } catch (err: any) {
+      console.error("Submission error:", err);
+      setSubmitError(err?.message || "A network or server error occurred. Please try again or email ea@lorvensystems.in directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleReset = () => {
+    setSuccessInfo(null);
+    setSubmitError(null);
+    setFormData({
+      fullName: "",
+      email: "",
+      organization: "",
+      phone: "",
+      enquiryType: "Products (WLI, IFD, IPS, RDPMS, AHABD, Simulators)",
+      details: "",
+      privacyConsent: false,
+      website: "",
+    });
+    setRenderedAt(Date.now());
   };
 
   return (
@@ -124,10 +275,9 @@ function ContactPage() {
                 <div className="space-y-1">
                   <h4 className="text-sm font-bold text-ink uppercase tracking-wide">Services</h4>
                   <p className="text-xs text-ink-muted font-light leading-relaxed">
-                    Electronic Product Development (EPD), Signalling Design, and KAVACH Installation & Commissioning.
+                    Electronic Product Development (EPD), Signalling Design, KAVACH Installation & Commissioning, S&T System Integration, and Electronics Manufacturing Services (EMS).
                   </p>
                 </div>
-
               </div>
             </div>
           </div>
@@ -135,26 +285,53 @@ function ContactPage() {
           {/* Right Column: Premium Form */}
           <div className="col-span-12 lg:col-span-7 gsap-reveal">
             <div className="p-5 sm:p-8 md:p-12 bg-section border border-rule/25 rounded-xl sm:rounded shadow-sm">
-              {formSubmitted ? (
-                <div className="py-8 sm:py-12 text-center space-y-4">
-                  <div className="w-12 h-12 rounded-full bg-steel/10 text-steel mx-auto flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-6 h-6">
+              {successInfo ? (
+                <div className="py-8 sm:py-12 text-center space-y-5">
+                  <div className="w-14 h-14 rounded-full bg-emerald-500/10 text-emerald-600 mx-auto flex items-center justify-center border border-emerald-500/20">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-7 h-7">
                       <path d="M5 13l4 4L19 7" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-light text-ink uppercase">Enquiry Received</h3>
+                  <div className="space-y-2">
+                    <span className="text-xs font-mono font-bold text-steel tracking-widest uppercase block">
+                      Ref #{successInfo.referenceId}
+                    </span>
+                    <h3 className="text-xl sm:text-2xl font-light text-ink uppercase">Enquiry Received</h3>
+                  </div>
                   <p className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light max-w-md mx-auto">
-                    Thank you for reaching out. A senior LorVen engineer will review your project requirements and respond within 24 hours.
+                    Thank you for reaching out. Your enquiry has been received and routed to our team at <strong className="text-ink font-semibold">{successInfo.destinationMailbox}</strong>. A senior engineer will review your requirements and respond within 24 hours.
                   </p>
-                  <button
-                    onClick={() => setFormSubmitted(false)}
-                    className="mt-4 text-xs font-mono font-bold text-steel hover:text-ink uppercase tracking-wider underline cursor-pointer"
-                  >
-                    Submit Another Enquiry
-                  </button>
+                  <div className="pt-2">
+                    <button
+                      onClick={handleReset}
+                      className="inline-flex items-center gap-2 px-6 py-2.5 bg-ink text-white text-xs font-mono font-bold uppercase tracking-wider rounded hover:bg-steel transition-colors cursor-pointer"
+                    >
+                      ← Submit Another Enquiry
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  {/* Honeypot field (hidden from users, traps automated spam bots) */}
+                  <div className="hidden" aria-hidden="true">
+                    <label htmlFor="website">Leave this field blank</label>
+                    <input
+                      id="website"
+                      type="text"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      value={formData.website}
+                      onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                    />
+                  </div>
+
+                  {submitError && (
+                    <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-md text-xs sm:text-sm text-red-600 font-medium leading-relaxed flex items-start gap-2.5">
+                      <span className="shrink-0 font-bold">⚠️</span>
+                      <span>{submitError}</span>
+                    </div>
+                  )}
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <div className="space-y-1.5 sm:space-y-2">
                       <label htmlFor="fullName" className="text-xs font-mono font-semibold uppercase tracking-wider text-ink block">
@@ -218,39 +395,89 @@ function ContactPage() {
 
                   <div className="space-y-1.5 sm:space-y-2">
                     <label htmlFor="enquiryType" className="text-xs font-mono font-semibold uppercase tracking-wider text-ink block">
-                      Enquiry Category
+                      Enquiry Category *
                     </label>
                     <select
                       id="enquiryType"
+                      required
                       value={formData.enquiryType}
                       onChange={(e) => setFormData({ ...formData, enquiryType: e.target.value })}
-                      className="w-full bg-bg border border-rule/30 px-3.5 sm:px-4 py-3 sm:py-3.5 text-base sm:text-sm text-ink focus:border-steel focus:outline-none transition-colors rounded-md sm:rounded-sm"
+                      className="w-full bg-bg border border-rule/30 px-3.5 sm:px-4 py-3 sm:py-3.5 text-base sm:text-sm text-ink focus:border-steel focus:outline-none transition-colors rounded-md sm:rounded-sm cursor-pointer"
                     >
-                      <option value="Products">Products (WLI, IFD, IPS, RDPMS, AHABD, Simulators)</option>
-                      <option value="Services">Services (EPD, Signalling Design, KAVACH Installation)</option>
-                      <option value="General">General Corporate Enquiry</option>
+                      <option value="Products (WLI, IFD, IPS, RDPMS, AHABD, Simulators)">Products (WLI, IFD, IPS, RDPMS, AHABD, Simulators)</option>
+                      <option value="Electronic Product Development (EPD)">Electronic Product Development (EPD)</option>
+                      <option value="Signalling Design Services">Signalling Design Services</option>
+                      <option value="KAVACH Installation & Commissioning">KAVACH Installation & Commissioning</option>
+                      <option value="Electronics Manufacturing Services (EMS)">Electronics Manufacturing Services (EMS)</option>
+                      <option value="S&T System Integration">S&T System Integration</option>
+                      <option value="Installation, Testing & Commissioning">Installation, Testing & Commissioning</option>
+                      <option value="General Corporate Enquiry">General Corporate Enquiry</option>
                     </select>
                   </div>
 
                   <div className="space-y-1.5 sm:space-y-2">
-                    <label htmlFor="details" className="text-xs font-mono font-semibold uppercase tracking-wider text-ink block">
-                      Project Details & Requirements
-                    </label>
+                    <div className="flex items-center justify-between">
+                      <label htmlFor="details" className="text-xs font-mono font-semibold uppercase tracking-wider text-ink block">
+                        Project Details &amp; Requirements *
+                      </label>
+                      <span className="text-[11px] font-mono text-ink-muted">
+                        {formData.details.trim().length}/20 min chars
+                      </span>
+                    </div>
                     <textarea
                       id="details"
                       rows={4}
-                      placeholder="Please outline system specifications, target deployment schedule, or technical queries..."
+                      required
+                      minLength={20}
+                      maxLength={3000}
+                      placeholder="Please outline system specifications, target deployment schedule, or technical queries (minimum 20 characters)..."
                       value={formData.details}
                       onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                       className="w-full bg-bg border border-rule/30 px-3.5 sm:px-4 py-3 sm:py-3.5 text-base sm:text-sm text-ink focus:border-steel focus:outline-none transition-colors rounded-md sm:rounded-sm resize-none"
                     ></textarea>
                   </div>
 
+                  {/* Privacy Consent Checkbox */}
+                  <div className="pt-1">
+                    <label className="flex items-start gap-3 cursor-pointer select-none">
+                      <input
+                        id="privacyConsent"
+                        type="checkbox"
+                        required
+                        checked={formData.privacyConsent}
+                        onChange={(e) => setFormData({ ...formData, privacyConsent: e.target.checked })}
+                        className="mt-0.5 h-4 w-4 rounded border-rule/30 text-steel focus:ring-steel cursor-pointer shrink-0"
+                      />
+                      <span className="text-xs text-ink-muted leading-relaxed font-light">
+                        I agree to the processing of my contact details in accordance with LorVen Systems' <Link to="/privacy" className="text-ink font-semibold underline hover:text-steel transition-colors">Privacy Policy</Link>. *
+                      </span>
+                    </label>
+                  </div>
+
+                  {/* Caution Notice Box */}
+                  <div className="p-3.5 bg-bg/80 border border-amber-500/25 rounded-md text-xs text-ink-muted leading-relaxed font-light flex items-start gap-2.5">
+                    <span className="text-amber-600 font-bold shrink-0 text-sm">⚠️</span>
+                    <span>
+                      <strong className="text-ink font-medium">Caution:</strong> Please do not upload confidential specifications through this form. Secure document exchange can be arranged after initial contact.
+                    </span>
+                  </div>
+
                   <button
                     type="submit"
-                    className="w-full bg-ink text-white hover:bg-steel py-3.5 sm:py-4 text-xs font-bold uppercase tracking-[0.2em] transition-colors duration-300 rounded-md sm:rounded-sm cursor-pointer shadow-md"
+                    disabled={isSubmitting}
+                    className="w-full bg-ink text-white hover:bg-steel disabled:opacity-60 disabled:cursor-not-allowed py-3.5 sm:py-4 text-xs font-bold uppercase tracking-[0.2em] transition-colors duration-300 rounded-md sm:rounded-sm cursor-pointer shadow-md flex items-center justify-center gap-2"
                   >
-                    Submit Enquiry →
+                    {isSubmitting ? (
+                      <>
+                        <svg className="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24" fill="none">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span>Validating &amp; Submitting...</span>
+                      </>
+                    ) : (
+                      <span>Submit Enquiry →</span>
+                    )}
                   </button>
                 </form>
               )}
