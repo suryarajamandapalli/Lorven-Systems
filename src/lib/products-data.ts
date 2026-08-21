@@ -119,12 +119,12 @@ export const PRODUCTS_DATA: Record<string, ProductSystemData> = {
     title: "IFD",
     category: "ELECTRIC LOCOMOTIVE",
     heroImage: sntHeroReal,
-    description: "Online Insulation Failure Detector system for continuous real-time monitoring of wayside signaling circuit insulation resistance.",
+    description: "Intelligent Field Device (IFD) system for real-time monitoring, energy metering, and remote control of railway electrical assets reporting to IR-NIYANTRAC.",
     
-    overviewTitle: "Automated insulation resistance logging for safety-critical railway cables.",
+    overviewTitle: "Intelligent field telemetry and electrical asset monitoring for Indian Railways.",
     overviewParagraphs: [
-      "The Insulation Failure Detector (IFD) is an online monitoring system designed to supervise the insulation resistance (IR) of signaling cables and point machine conductors relative to earth. Cable insulation decay due to moisture ingress or mechanical wear is a primary cause of ground faults and unsafe signal state changes.",
-      "The system injects a non-disruptive, low-voltage diagnostic signal into the lines under load, measuring insulation levels from 10kΩ to 10MΩ without interfering with active signaling commands. Degradation alerts are immediately logged, enabling proactive maintenance before ground faults occur."
+      "The Intelligent Field Device (IFD) is an advanced monitoring and control platform designed to supervise electrical assets, energy parameters, and operational health for Indian Railways, reporting over standard IoT protocols to IR-NIYANTRAC.",
+      "The system enables automated data acquisition, remote switching control, and real-time fault alerts, ensuring continuous operational visibility and energy efficiency across railway installations."
     ],
     overviewImage: pcbMacro,
 
