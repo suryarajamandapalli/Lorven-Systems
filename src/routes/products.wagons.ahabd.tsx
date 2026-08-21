@@ -12,13 +12,19 @@ if (typeof window !== "undefined") {
 import wagons from "@/assets/wagons.jpg";
 import depot from "@/assets/depot.jpg";
 
-import { createSeoMeta } from "@/lib/seo";
+import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/wagons/ahabd")({
   head: () => createSeoMeta({
     title: "AHABD – Acoustic Hot Axle Box Detector | LorVen Systems",
     description: "Trackside acoustic & thermal sensing layer mapping axle conditions for rolling stock.",
     path: "/products/wagons/ahabd",
+    structuredData: getProductSchema(
+      "Acoustic Hot Axle Box Detector (AHABD)",
+      "Trackside acoustic & thermal sensing layer mapping axle bearing conditions for rolling stock at mainline train speeds.",
+      "/products/wagons/ahabd",
+      "Rolling Stock Safety"
+    ),
   }),
   component: AhabdRoute,
 });

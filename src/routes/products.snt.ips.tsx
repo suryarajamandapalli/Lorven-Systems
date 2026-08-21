@@ -12,13 +12,19 @@ if (typeof window !== "undefined") {
 import ipsHero from "@/assets/electrical-cabinet.jpg";
 import depot from "@/assets/depot.jpg";
 
-import { createSeoMeta } from "@/lib/seo";
+import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/snt/ips")({
   head: () => createSeoMeta({
     title: "IPS – Integrated Power Supply | LorVen Systems",
     description: "Continuous, regulated AC and DC power for railway signalling circuits in RE and Non-RE areas.",
     path: "/products/snt/ips",
+    structuredData: getProductSchema(
+      "Integrated Power Supply (IPS)",
+      "Continuous, regulated AC and DC power supply for railway signalling circuits in RE and Non-RE areas with modular switch-mode rectifiers.",
+      "/products/snt/ips",
+      "Signalling & Telecom Power"
+    ),
   }),
   component: IpsRoute,
 });

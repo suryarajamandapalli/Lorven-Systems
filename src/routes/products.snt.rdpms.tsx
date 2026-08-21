@@ -12,13 +12,19 @@ if (typeof window !== "undefined") {
 import sntHero from "@/assets/snt-hero-premium.jpg";
 import depot from "@/assets/depot.jpg";
 
-import { createSeoMeta } from "@/lib/seo";
+import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/snt/rdpms")({
   head: () => createSeoMeta({
     title: "RDPMS – Remote Diagnostic System | LorVen Systems",
     description: "IoT-based condition monitoring and predictive maintenance for Indian Railways signalling assets.",
     path: "/products/snt/rdpms",
+    structuredData: getProductSchema(
+      "Remote Diagnostic & Predictive Monitoring System (RDPMS)",
+      "IoT-based condition monitoring and predictive maintenance for Indian Railways signalling assets including point machines, track circuits, and relay rooms.",
+      "/products/snt/rdpms",
+      "Signalling & Telecom IoT"
+    ),
   }),
   component: RdpmsRoute,
 });

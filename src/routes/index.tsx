@@ -50,13 +50,14 @@ import heroSlide18Img from "@/assets/Hero Images/Slide_18_ST_System_Integration.
 import heroSlide19Img from "@/assets/Hero Images/Slide_19_Electronics_Manufacturing_Services.jpg";
 import heroSlide20Img from "@/assets/Hero Images/Slide_20_Installation_Testing_Commissioning.png";
 
-import { createSeoMeta } from "@/lib/seo";
+import { createSeoMeta, getOrganizationSchema, getLocalBusinessSchema, DEFAULT_RAILWAY_DESCRIPTION } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
   head: () => createSeoMeta({
-    title: "LorVen Systems Pvt. Ltd.",
-    description: "Engineering Confidence for Critical Systems.",
+    title: "LorVen Systems | Railway Electronic Systems & Signalling Technologies",
+    description: DEFAULT_RAILWAY_DESCRIPTION,
     path: "/",
+    structuredData: [getOrganizationSchema(), getLocalBusinessSchema()],
   }),
   component: Home,
 });
@@ -663,9 +664,15 @@ function Hero() {
                   isActive ? "active-text-container pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
                 }`}
               >
-                <h1 className="mt-4 max-w-5xl text-[clamp(2rem,4.8vw,4.25rem)] font-light leading-[1.06] tracking-[-0.03em] overflow-visible whitespace-pre-line hero-text-item delay-1">
-                  <span>{slide.title}</span>
-                </h1>
+                {idx === 0 ? (
+                  <h1 className="mt-4 max-w-5xl text-[clamp(2rem,4.8vw,4.25rem)] font-light leading-[1.06] tracking-[-0.03em] overflow-visible whitespace-pre-line hero-text-item delay-1">
+                    <span>{slide.title}</span>
+                  </h1>
+                ) : (
+                  <h2 className="mt-4 max-w-5xl text-[clamp(2rem,4.8vw,4.25rem)] font-light leading-[1.06] tracking-[-0.03em] overflow-visible whitespace-pre-line hero-text-item delay-1">
+                    <span>{slide.title}</span>
+                  </h2>
+                )}
 
                 <div className="mt-8 md:mt-12 max-w-xl flex flex-col items-start gap-6">
                   <p className="text-sm md:text-base lg:text-lg leading-relaxed text-on-dark/85 hero-text-item delay-2">

@@ -12,13 +12,19 @@ if (typeof window !== "undefined") {
 import simHero from "@/assets/simulator.jpg";
 import depot from "@/assets/depot.jpg";
 
-import { createSeoMeta } from "@/lib/seo";
+import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/electric-locomotive/simulators")({
   head: () => createSeoMeta({
     title: "Driving Simulators | LorVen Systems",
     description: "For Loco Pilots and Assistant Loco Pilots — three-phase electric locomotives (WAP/WAG) and train sets: EMU, MEMU and Vande Bharat.",
     path: "/products/electric-locomotive/simulators",
+    structuredData: getProductSchema(
+      "Full-Mission Locomotive Driving Simulators",
+      "Full-mission driving and KAVACH simulators for Loco Pilots and Assistant Loco Pilots across WAP-7, WAG-9, EMU, MEMU, and Vande Bharat trainsets.",
+      "/products/electric-locomotive/simulators",
+      "Crew Training Simulators"
+    ),
   }),
   component: SimulatorsRoute,
 });
