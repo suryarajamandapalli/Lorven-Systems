@@ -204,7 +204,7 @@ function About() {
               <span className="text-xs font-mono font-bold text-steel uppercase">SERVICES</span>
               <h3 className="text-base font-semibold text-ink uppercase">Field Operations</h3>
               <p className="text-xs text-ink-muted leading-relaxed font-light">
-                On-site installation, safety validation, traffic block execution, and lifecycle technical support across Indian Railways zonal divisions.
+                On-site installation, safety validation, installation and commissioning activities undertaken during approved traffic or power blocks in coordination with the Railway authority and concerned OEM, and lifecycle technical support across Indian Railways zonal divisions.
               </p>
             </div>
           </div>
