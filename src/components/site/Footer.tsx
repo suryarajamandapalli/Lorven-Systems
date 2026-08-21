@@ -11,11 +11,13 @@ export function Footer() {
           {/* Column 1: Logo & Address */}
           <div className="col-span-12 md:col-span-3 flex flex-col">
             <Logo id="footer-logo" idPrefix="footer" className="text-white w-28 md:w-36 h-auto" />
-            <address className="mt-4 not-italic text-xs leading-relaxed opacity-70 max-w-xs space-y-1">
-              <strong>{COMPANY.legal}</strong>
-              <p>{COMPANY.hq.address}</p>
+            <address className="mt-4 not-italic text-sm leading-relaxed text-on-dark/80 max-w-xs space-y-1.5 font-light">
+              <strong className="block text-sm font-semibold text-white tracking-wide">{COMPANY.legal}</strong>
+              <p className="text-xs md:text-[13px] leading-relaxed">{COMPANY.hq.address}</p>
               {"landmark" in COMPANY.hq && COMPANY.hq.landmark && (
-                <p className="opacity-80 text-[11px]">Landmark: {COMPANY.hq.landmark}</p>
+                <p className="text-xs text-on-dark/65 leading-normal">
+                  <span className="text-on-dark/80 font-normal">Landmark:</span> {COMPANY.hq.landmark}
+                </p>
               )}
             </address>
           </div>
