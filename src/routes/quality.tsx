@@ -115,7 +115,7 @@ function QualityRoute() {
                 LorVen Systems operates a structured Quality Management System covering electronic product development, signalling design, hardware manufacturing, and field commissioning.
               </p>
               <p>
-                All products undergo functional testing, burn-in screening, and compliance verification against Indian Railways SEM guidelines and applicable RDSO standards before deployment.
+                Product releases intended for deployment are subjected to documented functional testing, applicable burn-in or endurance testing, configuration verification and compliance assessment in accordance with the approved product quality plan.
               </p>
             </div>
           </div>
