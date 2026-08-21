@@ -1,12 +1,7 @@
+﻿import { useGsapReveal } from "@/hooks/use-reveal";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 // Assets
 import ipsHero from "@/assets/electrical-cabinet.jpg";
@@ -16,7 +11,7 @@ import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/snt/ips")({
   head: () => createSeoMeta({
-    title: "IPS – Integrated Power Supply | LorVen Systems",
+    title: "IPS â€“ Integrated Power Supply | LorVen Systems",
     description: "Continuous, regulated AC and DC power for railway signalling circuits in RE and Non-RE areas.",
     path: "/products/snt/ips",
     structuredData: getProductSchema(
@@ -89,7 +84,7 @@ function IpsRoute() {
     },
     {
       title: "Feeds for every signalling load",
-      desc: "110 V DC fused feeds — relays, axle counters, block circuits, panel indication, data logger, EI, VDU, point machines and KAVACH.",
+      desc: "110 V DC fused feeds â€” relays, axle counters, block circuits, panel indication, data logger, EI, VDU, point machines and KAVACH.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
           <path d="M12 2v20M17 5H7M19 12H5M17 19H7" strokeLinecap="round" strokeLinejoin="round" />
@@ -125,7 +120,7 @@ function IpsRoute() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src={ipsHero}
-            alt="IPS — SMPS-Based Integrated Power Supply"
+            alt="IPS â€” SMPS-Based Integrated Power Supply"
             className="w-full h-full object-cover opacity-35 select-none pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent z-10" />
@@ -154,7 +149,7 @@ function IpsRoute() {
             </div>
 
             <p className="text-base md:text-lg text-white/90 leading-relaxed font-light max-w-3xl border-l-2 border-steel/40 pl-6 pt-2">
-              Continuous, regulated AC and DC power for railway signalling circuits in RE and Non-RE areas — Stations, LC Gates, IBH and Auto Huts.
+              Continuous, regulated AC and DC power for railway signalling circuits in RE and Non-RE areas â€” Stations, LC Gates, IBH and Auto Huts.
             </p>
           </div>
         </div>
@@ -173,13 +168,13 @@ function IpsRoute() {
         <div className="container-editorial grid grid-cols-12 gap-8 md:gap-16 items-center">
           {/* Left Column */}
           <div className="col-span-12 lg:col-span-7 gsap-reveal space-y-6">
-            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS — SIGNALLING & TELECOM</span>
+            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS â€” SIGNALLING & TELECOM</span>
             <h2 className="text-3xl md:text-4xl font-extralight leading-tight text-ink uppercase">
-              IPS — SMPS-Based Integrated Power Supply
+              IPS â€” SMPS-Based Integrated Power Supply
             </h2>
             <div className="border-t border-rule/20 pt-6">
               <p className="text-lg md:text-xl text-black leading-relaxed font-light">
-                Continuous, regulated AC and DC power for railway signalling circuits in RE and Non-RE areas — Stations, LC Gates, IBH and Auto Huts.
+                Continuous, regulated AC and DC power for railway signalling circuits in RE and Non-RE areas â€” Stations, LC Gates, IBH and Auto Huts.
               </p>
               <p className="text-sm text-ink-muted leading-relaxed font-mono uppercase tracking-wider mt-4">
                 As per RDSO Specification RDSO/SPN/165/2023, Version 4.0
@@ -273,7 +268,7 @@ function IpsRoute() {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm shadow-md"
               >
-                Consult Our Engineers →
+                Consult Our Engineers â†’
               </Link>
             </div>
           </div>
@@ -283,3 +278,4 @@ function IpsRoute() {
     </div>
   );
 }
+

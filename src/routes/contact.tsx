@@ -1,14 +1,9 @@
+﻿import { useGsapReveal } from "@/hooks/use-reveal";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
 import { useState, useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 // Asset imports
 import contactHero from "@/assets/loco-hero-real.jpg";
@@ -215,7 +210,7 @@ function ContactPage() {
   return (
     <div ref={containerRef} className="bg-bg text-ink selection:bg-ink selection:text-on-dark antialiased">
       
-      {/* ── PAGE HEADER: Compact breadcrumb + image banner ──────────────────── */}
+      {/* â”€â”€ PAGE HEADER: Compact breadcrumb + image banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="relative h-[220px] md:h-[260px] bg-ink overflow-hidden">
         {/* Background image */}
         <img
@@ -243,7 +238,7 @@ function ContactPage() {
       </div>
 
 
-      {/* ── SECTION 2: SPLIT ENQUIRY FORM & CONTEXT ────────────────────────── */}
+      {/* â”€â”€ SECTION 2: SPLIT ENQUIRY FORM & CONTEXT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section id="enquiry-form" className="bg-bg py-8 sm:py-12 md:py-16 border-t border-rule/20">
         <div className="container-editorial grid grid-cols-12 gap-8 lg:gap-16 items-start">
           
@@ -306,7 +301,7 @@ function ContactPage() {
                       onClick={handleReset}
                       className="inline-flex items-center gap-2 px-6 py-2.5 bg-ink text-white text-xs font-mono font-bold uppercase tracking-wider rounded hover:bg-steel transition-colors cursor-pointer"
                     >
-                      ← Submit Another Enquiry
+                      â† Submit Another Enquiry
                     </button>
                   </div>
                 </div>
@@ -327,7 +322,7 @@ function ContactPage() {
 
                   {submitError && (
                     <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-md text-xs sm:text-sm text-red-600 font-medium leading-relaxed flex items-start gap-2.5">
-                      <span className="shrink-0 font-bold">⚠️</span>
+                      <span className="shrink-0 font-bold">âš ï¸</span>
                       <span>{submitError}</span>
                     </div>
                   )}
@@ -456,7 +451,7 @@ function ContactPage() {
 
                   {/* Caution Notice Box */}
                   <div className="p-3.5 bg-bg/80 border border-amber-500/25 rounded-md text-xs text-ink-muted leading-relaxed font-light flex items-start gap-2.5">
-                    <span className="text-amber-600 font-bold shrink-0 text-sm">⚠️</span>
+                    <span className="text-amber-600 font-bold shrink-0 text-sm">âš ï¸</span>
                     <span>
                       <strong className="text-ink font-medium">Caution:</strong> Please do not upload confidential specifications through this form. Secure document exchange can be arranged after initial contact.
                     </span>
@@ -476,7 +471,7 @@ function ContactPage() {
                         <span>Validating &amp; Submitting...</span>
                       </>
                     ) : (
-                      <span>Submit Enquiry →</span>
+                      <span>Submit Enquiry â†’</span>
                     )}
                   </button>
                 </form>
@@ -487,7 +482,7 @@ function ContactPage() {
         </div>
       </section>
 
-      {/* ── SECTION 3: CLEAN HORIZONTAL CONTACT STRIP ──────────────────────── */}
+      {/* â”€â”€ SECTION 3: CLEAN HORIZONTAL CONTACT STRIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="bg-bg py-10 sm:py-16 border-t border-rule/20">
         <div className="container-editorial">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-rule/20 gsap-reveal">
@@ -500,7 +495,7 @@ function ContactPage() {
               <h3 className="text-base sm:text-lg font-bold text-ink uppercase">LorVen Systems Pvt. Ltd.</h3>
               <div className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light space-y-1">
                 <p>Zona Crescent, 8-682/B1 & B2, Road No. 12,</p>
-                <p>Banjara Hills, Hyderabad, Telangana – 500034</p>
+                <p>Banjara Hills, Hyderabad, Telangana â€“ 500034</p>
                 <p className="text-xs text-steel font-medium pt-1">Landmark: Zona Towers Building, 2nd Floor, Beside Ratnadeep</p>
               </div>
             </div>
@@ -523,7 +518,7 @@ function ContactPage() {
               </span>
               <div className="space-y-1 text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
                 <p>Tenders: <a href="mailto:procurement@lorvensystems.in" className="text-ink font-semibold hover:text-steel transition-colors">procurement@lorvensystems.in</a></p>
-                <p>Hours: Mon – Sat | 09:00 – 18:00 IST</p>
+                <p>Hours: Mon â€“ Sat | 09:00 â€“ 18:00 IST</p>
               </div>
             </div>
 
@@ -531,7 +526,7 @@ function ContactPage() {
         </div>
       </section>
 
-      {/* ── SECTION 4: OFFICE LOCATION & GOOGLE MAP ───────────────────────── */}
+      {/* â”€â”€ SECTION 4: OFFICE LOCATION & GOOGLE MAP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section id="office-location" className="bg-section py-12 sm:py-16 md:py-20 border-t border-rule/20">
         <div className="container-editorial space-y-8 sm:space-y-12">
           <div className="gsap-reveal space-y-2.5 sm:space-y-3 max-w-3xl">
@@ -539,7 +534,7 @@ function ContactPage() {
               Office Location
             </h2>
             <div className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
-              <p>Zona Crescent, 8-682/B1 & B2, Road No. 12, Banjara Hills, Hyderabad, Telangana – 500034</p>
+              <p>Zona Crescent, 8-682/B1 & B2, Road No. 12, Banjara Hills, Hyderabad, Telangana â€“ 500034</p>
               <p className="text-xs text-steel font-medium mt-1">Landmark: Zona Towers Building, 2nd Floor, Beside Ratnadeep</p>
             </div>
           </div>
@@ -561,7 +556,7 @@ function ContactPage() {
         </div>
       </section>
 
-      {/* ── SECTION 5: ENTERPRISE CTA ──────────────────────────────────────── */}
+      {/* â”€â”€ SECTION 5: ENTERPRISE CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="bg-ink text-on-dark py-12 sm:py-16 md:py-20 border-t border-ink relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
@@ -584,7 +579,7 @@ function ContactPage() {
                 href="#enquiry-form"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-md sm:rounded-sm shadow-md"
               >
-                Consult Our Engineers →
+                Consult Our Engineers â†’
               </a>
             </div>
           </div>
@@ -594,3 +589,4 @@ function ContactPage() {
     </div>
   );
 }
+

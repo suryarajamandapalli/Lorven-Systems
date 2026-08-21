@@ -1,12 +1,7 @@
+﻿import { useGsapReveal } from "@/hooks/use-reveal";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 // Assets
 import pcbMacro from "@/assets/pcb-macro.jpg";
@@ -16,7 +11,7 @@ import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/electric-locomotive/ifd")({
   head: () => createSeoMeta({
-    title: "IFD – Intelligent Field Device | LorVen Systems",
+    title: "IFD â€“ Intelligent Field Device | LorVen Systems",
     description: "Real-time monitoring, energy metering and remote control of railway electrical assets reporting to IR-NIYANTRAC.",
     path: "/products/electric-locomotive/ifd",
     structuredData: getProductSchema(
@@ -55,7 +50,7 @@ function IfdRoute() {
 
   const features = [
     {
-      title: "Master–Slave architecture",
+      title: "Masterâ€“Slave architecture",
       desc: "IFD Master aggregates IMCU Slaves over Modbus RS-485/TCP; 4G/5G to IR-NIYANTRAC with Ethernet/Wi-Fi secondary path and automatic switchover.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
@@ -74,7 +69,7 @@ function IfdRoute() {
     },
     {
       title: "Remote asset control",
-      desc: "ON/OFF, time-based, running-hours and restricted schedules — executed locally even without connectivity, with power-failure compensation.",
+      desc: "ON/OFF, time-based, running-hours and restricted schedules â€” executed locally even without connectivity, with power-failure compensation.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
           <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" strokeLinecap="round" strokeLinejoin="round" />
@@ -120,7 +115,7 @@ function IfdRoute() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src={pcbMacro}
-            alt="IFD — Intelligent Field Device for IR-NIYANTRAC"
+            alt="IFD â€” Intelligent Field Device for IR-NIYANTRAC"
             className="w-full h-full object-cover opacity-35 select-none pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent z-10" />
@@ -149,7 +144,7 @@ function IfdRoute() {
             </div>
 
             <p className="text-base md:text-lg text-white/90 leading-relaxed font-light max-w-3xl border-l-2 border-steel/40 pl-6 pt-2">
-              Real-time monitoring, energy metering and remote control of railway electrical assets — lifts, escalators, platform lighting, pumps, solar plants, high masts and DG sets — reporting to IR-NIYANTRAC, Indian Railways' CRIS-hosted cloud platform, over the oneM2M Common Service Platform.
+              Real-time monitoring, energy metering and remote control of railway electrical assets â€” lifts, escalators, platform lighting, pumps, solar plants, high masts and DG sets â€” reporting to IR-NIYANTRAC, Indian Railways' CRIS-hosted cloud platform, over the oneM2M Common Service Platform.
             </p>
           </div>
         </div>
@@ -168,13 +163,13 @@ function IfdRoute() {
         <div className="container-editorial grid grid-cols-12 gap-8 md:gap-16 items-center">
           {/* Left Column */}
           <div className="col-span-12 lg:col-span-7 gsap-reveal space-y-6">
-            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS — IOT & ENERGY MANAGEMENT</span>
+            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS â€” IOT & ENERGY MANAGEMENT</span>
             <h2 className="text-3xl md:text-4xl font-extralight leading-tight text-ink uppercase">
-              IFD — Intelligent Field Device for IR-NIYANTRAC
+              IFD â€” Intelligent Field Device for IR-NIYANTRAC
             </h2>
             <div className="border-t border-rule/20 pt-6">
               <p className="text-lg md:text-xl text-black leading-relaxed font-light">
-                Real-time monitoring, energy metering and remote control of railway electrical assets — lifts, escalators, platform lighting, pumps, solar plants, high masts and DG sets — reporting to IR-NIYANTRAC, Indian Railways' CRIS-hosted cloud platform, over the oneM2M Common Service Platform.
+                Real-time monitoring, energy metering and remote control of railway electrical assets â€” lifts, escalators, platform lighting, pumps, solar plants, high masts and DG sets â€” reporting to IR-NIYANTRAC, Indian Railways' CRIS-hosted cloud platform, over the oneM2M Common Service Platform.
               </p>
               <p className="text-sm text-ink-muted leading-relaxed font-mono uppercase tracking-wider mt-4">
                 As per RDSO Specification IS/RDSO-PSE/1004:2026 (Rev-0)
@@ -245,7 +240,7 @@ function IfdRoute() {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm shadow-md"
               >
-                Consult Our Engineers →
+                Consult Our Engineers â†’
               </Link>
             </div>
           </div>
@@ -255,3 +250,4 @@ function IfdRoute() {
     </div>
   );
 }
+

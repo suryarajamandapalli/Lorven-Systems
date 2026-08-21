@@ -1,13 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { PageIndex } from "@/components/site/PageIndex";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import { useGsapReveal } from "@/hooks/use-reveal";
 
 // Assets
 import pcbMacro from "@/assets/pcb-macro.jpg";
@@ -27,25 +21,7 @@ export const Route = createFileRoute("/about")({
 });
 
 function About() {
-  useGSAP(() => {
-    gsap.utils.toArray(".gsap-reveal").forEach((elem: any) => {
-      gsap.fromTo(
-        elem,
-        { y: 20, opacity: 0 },
-        {
-          scrollTrigger: {
-            trigger: elem,
-            start: "top 90%",
-            toggleActions: "play none none reverse",
-          },
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: "power2.out",
-        }
-      );
-    });
-  }, []);
+  useGsapReveal();
 
   return (
     <div className="bg-bg text-ink selection:bg-ink selection:text-on-dark antialiased">

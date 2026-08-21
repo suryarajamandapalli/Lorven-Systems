@@ -1,12 +1,7 @@
+﻿import { useGsapReveal } from "@/hooks/use-reveal";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 // Assets
 import pcbMacro from "@/assets/pcb-macro.jpg";
@@ -17,7 +12,7 @@ import { createSeoMeta } from "@/lib/seo";
 export const Route = createFileRoute("/services/product-dev")({
   head: () => createSeoMeta({
     title: "Electronic Product Development | LorVen Systems",
-    description: "End-to-end electronic product development services — from concept through validated design to production for safety-critical railway systems.",
+    description: "End-to-end electronic product development services â€” from concept through validated design to production for safety-critical railway systems.",
     path: "/services/product-dev",
   }),
   component: ProductDevRoute,
@@ -56,7 +51,7 @@ function ProductDevRoute() {
     {
       num: "02",
       title: "Hardware design",
-      desc: "Schematic capture and PCB layout — high-reliability practices for vibration, temperature and EMC environments."
+      desc: "Schematic capture and PCB layout â€” high-reliability practices for vibration, temperature and EMC environments."
     },
     {
       num: "03",
@@ -81,12 +76,12 @@ function ProductDevRoute() {
     {
       num: "07",
       title: "Approvals & field trials",
-      desc: "Support through vendor and prototype approval with Indian Railways and RDSO — technical documentation, QAP, O&M manuals."
+      desc: "Support through vendor and prototype approval with Indian Railways and RDSO â€” technical documentation, QAP, O&M manuals."
     },
     {
       num: "08",
       title: "Transfer to production",
-      desc: "Handover to our in-house EMS facility — a single-point path from concept to supplied product."
+      desc: "Handover to our in-house EMS facility â€” a single-point path from concept to supplied product."
     }
   ];
 
@@ -105,7 +100,7 @@ function ProductDevRoute() {
     },
     {
       title: "Single Engineering Partner",
-      desc: "Direct handover to our in-house EMS manufacturing facility — providing a seamless single-point path from concept to supplied product."
+      desc: "Direct handover to our in-house EMS manufacturing facility â€” providing a seamless single-point path from concept to supplied product."
     },
     {
       title: "Railway Standards Conformance",
@@ -154,7 +149,7 @@ function ProductDevRoute() {
             </div>
 
             <p className="text-base md:text-xl text-white/90 leading-relaxed font-light max-w-3xl border-l-2 border-steel pl-6 pt-2">
-              End-to-end — from concept through validated design to production
+              End-to-end â€” from concept through validated design to production
             </p>
           </div>
         </div>
@@ -179,7 +174,7 @@ function ProductDevRoute() {
             </h2>
             <div className="border-t border-rule/20 pt-6 space-y-4">
               <p className="text-lg md:text-xl text-black leading-relaxed font-light">
-                End-to-end — from concept through validated design to production.
+                End-to-end â€” from concept through validated design to production.
               </p>
               <p className="text-base text-ink-muted leading-relaxed font-light">
                 LorVen Systems provides full-scope electronic engineering services for railway, transport, and industrial sectors. We guide complex designs from early requirements capture through rigorous type testing and seamless transfer to production.
@@ -261,7 +256,7 @@ function ProductDevRoute() {
                     <span className="text-xs font-bold text-ink uppercase tracking-wider">{flow.label}</span>
                   </div>
                   {idx < processFlow.length - 1 && (
-                    <span className="hidden lg:block text-rule/40 font-light text-lg ml-auto">→</span>
+                    <span className="hidden lg:block text-rule/40 font-light text-lg ml-auto">â†’</span>
                   )}
                 </div>
               ))}
@@ -314,7 +309,7 @@ function ProductDevRoute() {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm shadow-md"
               >
-                Consult Our Engineers →
+                Consult Our Engineers â†’
               </Link>
             </div>
           </div>
@@ -324,3 +319,4 @@ function ProductDevRoute() {
     </div>
   );
 }
+

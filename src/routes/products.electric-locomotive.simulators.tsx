@@ -1,12 +1,7 @@
+﻿import { useGsapReveal } from "@/hooks/use-reveal";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 // Assets
 import simHero from "@/assets/simulator.jpg";
@@ -17,7 +12,7 @@ import { createSeoMeta, getProductSchema } from "@/lib/seo";
 export const Route = createFileRoute("/products/electric-locomotive/simulators")({
   head: () => createSeoMeta({
     title: "Driving Simulators | LorVen Systems",
-    description: "For Loco Pilots and Assistant Loco Pilots — three-phase electric locomotives (WAP/WAG) and train sets: EMU, MEMU and Vande Bharat.",
+    description: "For Loco Pilots and Assistant Loco Pilots â€” three-phase electric locomotives (WAP/WAG) and train sets: EMU, MEMU and Vande Bharat.",
     path: "/products/electric-locomotive/simulators",
     structuredData: getProductSchema(
       "Full-Mission Locomotive Driving Simulators",
@@ -65,7 +60,7 @@ function SimulatorsRoute() {
     },
     {
       title: "Instructor Station",
-      desc: "Instructor station — scenario authoring, fault injection, real-time monitoring and session control.",
+      desc: "Instructor station â€” scenario authoring, fault injection, real-time monitoring and session control.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
           <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" strokeLinecap="round" strokeLinejoin="round" />
@@ -139,7 +134,7 @@ function SimulatorsRoute() {
             </div>
 
             <p className="text-base md:text-lg text-white/90 leading-relaxed font-light max-w-3xl border-l-2 border-steel/40 pl-6 pt-2">
-              For Loco Pilots and Assistant Loco Pilots — three-phase electric locomotives (WAP/WAG) and train sets: EMU, MEMU and Vande Bharat. Developed in line with RDSO functional requirements for desktop simulators.
+              For Loco Pilots and Assistant Loco Pilots â€” three-phase electric locomotives (WAP/WAG) and train sets: EMU, MEMU and Vande Bharat. Developed in line with RDSO functional requirements for desktop simulators.
             </p>
           </div>
         </div>
@@ -158,13 +153,13 @@ function SimulatorsRoute() {
         <div className="container-editorial grid grid-cols-12 gap-8 md:gap-16 items-center">
           {/* Left Column */}
           <div className="col-span-12 lg:col-span-7 gsap-reveal space-y-6">
-            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS — ELECTRIC LOCOMOTIVE</span>
+            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS â€” ELECTRIC LOCOMOTIVE</span>
             <h2 className="text-3xl md:text-4xl font-extralight leading-tight text-ink uppercase">
               Driving Simulators
             </h2>
             <div className="border-t border-rule/20 pt-6 space-y-4">
               <p className="text-lg md:text-xl text-black leading-relaxed font-light">
-                For Loco Pilots and Assistant Loco Pilots — three-phase electric locomotives (WAP/WAG) and train sets: EMU, MEMU and Vande Bharat.
+                For Loco Pilots and Assistant Loco Pilots â€” three-phase electric locomotives (WAP/WAG) and train sets: EMU, MEMU and Vande Bharat.
               </p>
               <p className="text-sm text-ink-muted leading-relaxed font-mono uppercase tracking-wider">
                 Developed in line with RDSO functional requirements for desktop simulators.
@@ -235,7 +230,7 @@ function SimulatorsRoute() {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm shadow-md"
               >
-                Consult Our Engineers →
+                Consult Our Engineers â†’
               </Link>
             </div>
           </div>
@@ -245,3 +240,4 @@ function SimulatorsRoute() {
     </div>
   );
 }
+

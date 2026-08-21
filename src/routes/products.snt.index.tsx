@@ -1,13 +1,8 @@
+﻿import { useGsapReveal } from "@/hooks/use-reveal";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { PageIndex } from "@/components/site/PageIndex";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 // Assets
 import sntHero from "@/assets/snt-hero-real.jpg";
@@ -20,7 +15,7 @@ import locoThumb from "@/assets/loco-card-thumb.png";
 export const Route = createFileRoute("/products/snt/")({
   head: () => ({
     meta: [
-      { title: "Signalling & Telecom — LorVen Systems" },
+      { title: "Signalling & Telecom â€” LorVen Systems" },
       { name: "description", content: "Mission-critical signalling and telecommunication systems for modern railway networks." },
     ],
   }),
@@ -28,28 +23,7 @@ export const Route = createFileRoute("/products/snt/")({
 });
 
 function SNTProductPage() {
-  useGSAP(() => {
-    gsap.utils.toArray(".gsap-reveal").forEach((elem: any) => {
-      gsap.fromTo(
-        elem,
-        { y: 30, opacity: 0 },
-        {
-          scrollTrigger: { trigger: elem, start: "top 88%", toggleActions: "play none none reverse" },
-          y: 0, opacity: 1, duration: 1, ease: "power2.out",
-        }
-      );
-    });
-
-    // Sticky image section
-    ScrollTrigger.create({
-      trigger: ".sticky-container",
-      start: "top 20%",
-      end: "bottom 80%",
-      pin: ".sticky-image",
-    });
-
-    setTimeout(() => ScrollTrigger.refresh(), 500);
-  }, []);
+  useGsapReveal();
 
   return (
     <div className="bg-bg text-ink selection:bg-ink selection:text-on-dark antialiased">
@@ -111,7 +85,7 @@ function SNTProductPage() {
                 Railway signalling is unforgiving. A failure in communication or logic doesn't just halt operations; it compromises safety. 
               </p>
               <p className="text-base text-ink-muted font-light leading-relaxed">
-                LorVen’s SNT portfolio is built entirely around fail-safe architectures. From Integrated Power Supplies (IPS) that guarantee uninterrupted wayside operation, to ruggedized Data Loggers that record microsecond-level events, we engineer the invisible nervous system of modern railways.
+                LorVenâ€™s SNT portfolio is built entirely around fail-safe architectures. From Integrated Power Supplies (IPS) that guarantee uninterrupted wayside operation, to ruggedized Data Loggers that record microsecond-level events, we engineer the invisible nervous system of modern railways.
               </p>
             </div>
             <div className="border-l border-rule pl-8 flex flex-col justify-center">
@@ -175,7 +149,7 @@ function SNTProductPage() {
             <div className="gsap-reveal border-t border-rule/30 pt-8">
               <h3 className="text-2xl font-light text-ink mb-4 uppercase">Thermal & EMI Immunisation</h3>
               <p className="text-sm md:text-base text-ink-muted font-light leading-relaxed">
-                Wayside cabinets bake in 55°C summers and freeze in winters, while sitting next to 25kV traction lines. We use heavy copper planes, conformal coating, and strict component derating to ensure logical integrity isn't destroyed by electrical noise.
+                Wayside cabinets bake in 55Â°C summers and freeze in winters, while sitting next to 25kV traction lines. We use heavy copper planes, conformal coating, and strict component derating to ensure logical integrity isn't destroyed by electrical noise.
               </p>
             </div>
           </div>
@@ -195,7 +169,7 @@ function SNTProductPage() {
             {[
               { label: "Input Capacity", value: "Up to 4096 Digital I/O", desc: "Expandable architecture" },
               { label: "Scan Rate", value: "< 16 Milliseconds", desc: "Real-time event capture" },
-              { label: "Operating Temp", value: "-10°C to +70°C", desc: "Without forced cooling" },
+              { label: "Operating Temp", value: "-10Â°C to +70Â°C", desc: "Without forced cooling" },
               { label: "Communication", value: "OFC, E1, Ethernet, GSM", desc: "Multi-protocol routing" },
               { label: "Memory Setup", value: "Solid-State SD / NVRAM", desc: "1 million event capacity" },
               { label: "Certification", value: "RDSO / SPN / 144", desc: "Indian Railways standard" }
@@ -244,7 +218,7 @@ function SNTProductPage() {
               From wayside signals to onboard intelligence. Explore our high-power traction converters, auxiliary panels, and driver cabin interfaces.
             </p>
             <Link to="/products/electric-locomotive" className="group flex items-center gap-4 border-b border-rule pb-2 text-sm uppercase tracking-[0.2em] text-ink hover:text-steel hover:border-steel w-max transition-colors">
-              Continue to Electric Loco <span className="group-hover:translate-x-2 transition-transform">→</span>
+              Continue to Electric Loco <span className="group-hover:translate-x-2 transition-transform">â†’</span>
             </Link>
           </div>
           <div className="gsap-reveal hidden md:block overflow-hidden h-[40vh] rounded-xl border border-rule/10 shadow-md">
@@ -276,3 +250,4 @@ function SNTProductPage() {
     </div>
   );
 }
+

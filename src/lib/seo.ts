@@ -1,4 +1,4 @@
-export const SITE_URL = "https://lorven-systems.vercel.app";
+export const SITE_URL = "https://lorvensystems.in";
 export const COMPANY_LEGAL = "LorVen Systems Pvt. Ltd.";
 export const TAGLINE = "Engineering Confidence for Critical Systems.";
 export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;

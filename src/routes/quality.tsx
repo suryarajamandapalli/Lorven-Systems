@@ -1,12 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
+import { useGsapReveal } from "@/hooks/use-reveal";
 import { useRef } from "react";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 // Assets
 import pcbMacro from "@/assets/pcb-macro.jpg";
@@ -28,25 +22,7 @@ export const Route = createFileRoute("/quality")({
 function QualityRoute() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    gsap.utils.toArray(".gsap-reveal").forEach((elem: any) => {
-      gsap.fromTo(
-        elem,
-        { y: 20, opacity: 0 },
-        {
-          scrollTrigger: {
-            trigger: elem,
-            start: "top 90%",
-            toggleActions: "play none none reverse",
-          },
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          ease: "power2.out",
-        }
-      );
-    });
-  }, { scope: containerRef });
+  useGsapReveal();
 
   const workflowSteps = [
     { step: "01", name: "Requirements" },

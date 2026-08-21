@@ -1,13 +1,8 @@
+﻿import { useGsapReveal } from "@/hooks/use-reveal";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { PageIndex } from "@/components/site/PageIndex";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 // Assets
 import locoHero from "@/assets/loco-hero-real.jpg";
@@ -19,7 +14,7 @@ import coachThumb from "@/assets/coach-build.jpg";
 export const Route = createFileRoute("/products/electric-locomotive/")({
   head: () => ({
     meta: [
-      { title: "Electric Locomotive — LorVen Systems" },
+      { title: "Electric Locomotive â€” LorVen Systems" },
       { name: "description", content: "High-voltage traction, auxiliary power, and advanced driver interfaces for mainline electric locomotives." },
     ],
   }),
@@ -27,36 +22,7 @@ export const Route = createFileRoute("/products/electric-locomotive/")({
 });
 
 function LocoProductPage() {
-  useGSAP(() => {
-    gsap.utils.toArray(".gsap-reveal").forEach((elem: any) => {
-      gsap.fromTo(
-        elem,
-        { y: 30, opacity: 0 },
-        {
-          scrollTrigger: { trigger: elem, start: "top 88%", toggleActions: "play none none reverse" },
-          y: 0, opacity: 1, duration: 1.2, ease: "power2.out",
-        }
-      );
-    });
-
-    // Horizontal Scroll Section
-    const horizontalSections = gsap.utils.toArray(".horizontal-item");
-    if (horizontalSections.length > 0) {
-      gsap.to(horizontalSections, {
-        xPercent: -100 * (horizontalSections.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".horizontal-container",
-          pin: true,
-          scrub: 1,
-          snap: 1 / (horizontalSections.length - 1),
-          end: () => "+=" + (document.querySelector(".horizontal-container")?.scrollWidth || 2000),
-        }
-      });
-    }
-
-    setTimeout(() => ScrollTrigger.refresh(), 500);
-  }, []);
+  useGsapReveal();
 
   return (
     <div className="bg-bg text-ink selection:bg-ink selection:text-on-dark antialiased">
@@ -195,7 +161,7 @@ function LocoProductPage() {
               <div className="gsap-reveal border-b border-rule pb-8">
                 <h4 className="text-xl text-ink font-medium mb-3 uppercase">Operating Temperatures</h4>
                 <p className="text-sm md:text-base text-ink-muted font-light leading-relaxed">
-                  Rated for -25°C to +70°C without active cooling. We utilize high-temperature industrial grade components and thick-film thermal management strategies.
+                  Rated for -25Â°C to +70Â°C without active cooling. We utilize high-temperature industrial grade components and thick-film thermal management strategies.
                 </p>
               </div>
             </div>
@@ -236,7 +202,7 @@ function LocoProductPage() {
               Step from the locomotive into the trainset. Discover our high-reliability passenger information systems, onboard diagnostics, and cabin comforts.
             </p>
             <Link to="/products/coaches" className="group flex items-center gap-4 border-b border-rule pb-2 text-sm uppercase tracking-[0.2em] text-ink hover:text-steel hover:border-steel w-max transition-colors">
-              Continue to Coaches <span className="group-hover:translate-x-2 transition-transform">→</span>
+              Continue to Coaches <span className="group-hover:translate-x-2 transition-transform">â†’</span>
             </Link>
           </div>
         </div>
@@ -264,3 +230,4 @@ function LocoProductPage() {
     </div>
   );
 }
+

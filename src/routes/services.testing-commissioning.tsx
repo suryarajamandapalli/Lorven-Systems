@@ -1,12 +1,7 @@
+﻿import { useGsapReveal } from "@/hooks/use-reveal";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 // Assets
 import installationHeroPremium from "@/assets/installation-hero-premium.jpg";
@@ -218,7 +213,7 @@ function TestingCommissioningRoute() {
                   <ul className="space-y-3 border-t border-rule/15 pt-4">
                     {cap.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="flex items-start gap-3 text-sm text-ink-muted leading-relaxed font-light">
-                        <span className="text-steel font-bold text-xs mt-1">•</span>
+                        <span className="text-steel font-bold text-xs mt-1">â€¢</span>
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -274,7 +269,7 @@ function TestingCommissioningRoute() {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm shadow-md"
               >
-                Consult Our Engineers →
+                Consult Our Engineers â†’
               </Link>
             </div>
           </div>
@@ -284,3 +279,4 @@ function TestingCommissioningRoute() {
     </div>
   );
 }
+

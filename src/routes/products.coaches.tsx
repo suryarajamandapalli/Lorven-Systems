@@ -1,13 +1,8 @@
+﻿import { useGsapReveal } from "@/hooks/use-reveal";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { PageIndex } from "@/components/site/PageIndex";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
 
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 // Assets
 import coachHero from "@/assets/coach-build.jpg";
@@ -19,7 +14,7 @@ import wagons from "@/assets/wagons.jpg";
 export const Route = createFileRoute("/products/coaches")({
   head: () => ({
     meta: [
-      { title: "Passenger Coaches — LorVen Systems" },
+      { title: "Passenger Coaches â€” LorVen Systems" },
       { name: "description", content: "Human-centric engineering for passenger coaches. HVAC controllers, passenger information systems, and intelligent lighting." },
     ],
   }),
@@ -27,20 +22,7 @@ export const Route = createFileRoute("/products/coaches")({
 });
 
 function CoachesProductPage() {
-  useGSAP(() => {
-    gsap.utils.toArray(".gsap-reveal").forEach((elem: any) => {
-      gsap.fromTo(
-        elem,
-        { y: 30, opacity: 0 },
-        {
-          scrollTrigger: { trigger: elem, start: "top 88%", toggleActions: "play none none reverse" },
-          y: 0, opacity: 1, duration: 1.2, ease: "power2.out",
-        }
-      );
-    });
-    
-    setTimeout(() => ScrollTrigger.refresh(), 500);
-  }, []);
+  useGsapReveal();
 
   return (
     <div className="bg-bg text-ink selection:bg-ink selection:text-on-dark antialiased">
@@ -235,7 +217,7 @@ function CoachesProductPage() {
               From passenger comfort to heavy industrial freight. Discover our condition monitoring and telemetry systems for freight wagons.
             </p>
             <Link to="/products/wagons" className="group flex items-center gap-4 border-b border-rule pb-2 text-sm uppercase tracking-[0.2em] text-ink hover:text-steel hover:border-steel w-max transition-colors">
-              Continue to Wagons <span className="group-hover:translate-x-2 transition-transform">→</span>
+              Continue to Wagons <span className="group-hover:translate-x-2 transition-transform">â†’</span>
             </Link>
           </div>
           <div className="gsap-reveal hidden md:block overflow-hidden h-[40vh] bg-surface rounded-xl border border-rule/10 shadow-sm">
@@ -266,3 +248,4 @@ function CoachesProductPage() {
     </div>
   );
 }
+

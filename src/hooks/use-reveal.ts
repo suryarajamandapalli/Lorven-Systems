@@ -55,3 +55,45 @@ export function useAutoReveal(key?: string) {
     return () => io.disconnect();
   }, [key]);
 }
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.config({ nullTargetWarn: false });
+}
+
+/**
+ * Robust, reduced-motion-safe GSAP scroll reveal hook for `.gsap-reveal` elements.
+ */
+export function useGsapReveal() {
+  useGSAP(() => {
+    if (typeof window === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+    const elements = gsap.utils.toArray<HTMLElement>(".gsap-reveal");
+    if (!elements.length) return;
+
+    elements.forEach((elem) => {
+      if (!elem) return;
+      gsap.fromTo(
+        elem,
+        { y: 20, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: elem,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "power2.out",
+        }
+      );
+    });
+  }, []);
+}

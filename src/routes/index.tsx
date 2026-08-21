@@ -64,100 +64,100 @@ export const Route = createFileRoute("/")({
 
 function Home() {
   useGSAP(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
     // 1. Hero text parallax scrolling
-    gsap.to(".hero-parallax-content", {
-      scrollTrigger: {
-        trigger: "section.relative.h-\\[100svh\\]",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-      yPercent: 30,
-      opacity: 0.1,
-      ease: "none",
-    });
+    if (document.querySelector(".hero-parallax-content")) {
+      gsap.to(".hero-parallax-content", {
+        scrollTrigger: {
+          trigger: "section.relative.h-\\[100svh\\]",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
+        yPercent: 30,
+        opacity: 0.1,
+        ease: "none",
+      });
+    }
 
     // 2. About Preview layout parallax
-    gsap.fromTo(
-      ".about-video-card",
-      { y: 0 },
-      {
-        scrollTrigger: {
-          trigger: ".about-section",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-        y: 40,
-        ease: "none",
-      }
-    );
-
-    gsap.fromTo(
-      ".about-float-card",
-      { y: 30 },
-      {
-        scrollTrigger: {
-          trigger: ".about-section",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-        y: -60,
-        ease: "none",
-      }
-    );
+    if (document.querySelector(".about-video-card")) {
+      gsap.fromTo(
+        ".about-video-card",
+        { y: 0 },
+        {
+          scrollTrigger: {
+            trigger: ".about-section",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+          y: 40,
+          ease: "none",
+        }
+      );
+    }
 
     // 3. Products section background parallax
-    gsap.fromTo(
-      ".products-parallax-bg",
-      { y: -30 },
-      {
-        scrollTrigger: {
-          trigger: ".products-section",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-        y: 30,
-        ease: "none",
-      }
-    );
+    if (document.querySelector(".products-parallax-bg")) {
+      gsap.fromTo(
+        ".products-parallax-bg",
+        { y: -30 },
+        {
+          scrollTrigger: {
+            trigger: ".products-section",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+          y: 30,
+          ease: "none",
+        }
+      );
+    }
 
     // 4. Services section visual column parallax
-    gsap.fromTo(
-      ".services-parallax-col",
-      { y: 40 },
-      {
-        scrollTrigger: {
-          trigger: ".services-section",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-        y: -40,
-        ease: "none",
-      }
-    );
+    if (document.querySelector(".services-parallax-col")) {
+      gsap.fromTo(
+        ".services-parallax-col",
+        { y: 40 },
+        {
+          scrollTrigger: {
+            trigger: ".services-section",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+          y: -40,
+          ease: "none",
+        }
+      );
+    }
 
     // 5. HomeCTA background image parallax
-    gsap.fromTo(
-      ".cta-parallax-img",
-      { yPercent: -5 },
-      {
-        scrollTrigger: {
-          trigger: ".cta-section",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-        yPercent: 5,
-        ease: "none",
-      }
-    );
+    if (document.querySelector(".cta-parallax-img")) {
+      gsap.fromTo(
+        ".cta-parallax-img",
+        { yPercent: -5 },
+        {
+          scrollTrigger: {
+            trigger: ".cta-section",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+          yPercent: 5,
+          ease: "none",
+        }
+      );
+    }
 
     // 6. Global GSAP scroll reveals for eyebrows, headings and body matter
-    gsap.utils.toArray(".gsap-reveal").forEach((elem: any) => {
+    gsap.utils.toArray<HTMLElement>(".gsap-reveal").forEach((elem) => {
+      if (!elem) return;
       gsap.fromTo(
         elem,
         { y: 35, opacity: 0 },
@@ -176,7 +176,8 @@ function Home() {
     });
 
     // 7. VMP Section parallax (Elegant Float & Breathe)
-    gsap.utils.toArray(".vmp-img-container").forEach((container: any) => {
+    gsap.utils.toArray<HTMLElement>(".vmp-img-container").forEach((container) => {
+      if (!container || !container.parentElement) return;
       const img = container.querySelector("img");
       
       // Floating container effect
@@ -196,20 +197,22 @@ function Home() {
       );
 
       // Breathing image effect (Scale up)
-      gsap.fromTo(
-        img,
-        { scale: 1 },
-        {
-          scrollTrigger: {
-            trigger: container.parentElement,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,
-          },
-          scale: 1.15,
-          ease: "none",
-        }
-      );
+      if (img) {
+        gsap.fromTo(
+          img,
+          { scale: 1 },
+          {
+            scrollTrigger: {
+              trigger: container.parentElement,
+              start: "top bottom",
+              end: "bottom top",
+              scrub: true,
+            },
+            scale: 1.15,
+            ease: "none",
+          }
+        );
+      }
     });
 
     // 8. Backup refresh timer to guarantee offsets are correct after layout hydrates and unblocks

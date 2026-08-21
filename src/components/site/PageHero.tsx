@@ -19,6 +19,9 @@ export function PageHero({ eyebrow, title, lede, image, align = "left" }: Props)
   const cleanEyebrow = eyebrow.replace(/^[A-Z0-9.\/]+\s*—\s*/i, "").toUpperCase();
 
   useGSAP(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
     const ctx = gsap.context(() => {
       // 1. Slow parallax/zoom on the background image
       if (image) {

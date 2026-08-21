@@ -24,6 +24,9 @@ export function BreadcrumbHero({
   const containerRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
     const ctx = gsap.context(() => {
       // 1. Slow parallax/zoom on the background image
       gsap.fromTo(
