@@ -1,0 +1,429 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "@fontsource-variable/figtree";
+
+/* LorVen Systems — editorial industrial design tokens */
+
+:root {
+  --bg: oklch(0.92 0.004 95);       /* warm off-white */
+  --section: oklch(0.88 0.005 95);  /* slightly darker */
+  --surface: oklch(0.86 0.005 95);  /* card surfaces */
+  --ink: oklch(0.196 0 0);          /* #1B1B1B charcoal */
+  --ink-muted: oklch(0.42 0 0);     /* muted text */
+  --rule: oklch(0.78 0 0);          /* divider lines */
+  --steel: oklch(0.45 0.06 240);    /* accent blue */
+  --forest: oklch(0.36 0.04 165);   /* accent green */
+  --on-dark: oklch(0.984 0.003 95); /* near-white on dark */
+}
+
+@theme inline {
+  --font-sans: "Figtree Variable", "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Figtree Variable", "Figtree", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: var(--bg);
+  --color-section: var(--section);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-rule: var(--rule);
+  --color-steel: var(--steel);
+  --color-forest: var(--forest);
+  --color-on-dark: var(--on-dark); /* near-white on dark */
+}
+
+/* Security & Trust — Print Protection for Official Documents */
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+@theme inline {
+  /* Shadcn compatibility shims */
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --color-border: var(--rule);
+  --color-input: var(--rule);
+  --color-ring: var(--steel);
+  --color-primary: var(--ink);
+  --color-primary-foreground: var(--on-dark);
+  --color-secondary: var(--surface);
+  --color-secondary-foreground: var(--ink);
+  --color-muted: var(--surface);
+  --color-muted-foreground: var(--ink-muted);
+  --color-accent: var(--surface);
+  --color-accent-foreground: var(--ink);
+  --color-destructive: oklch(0.5 0.2 25);
+  --color-destructive-foreground: var(--on-dark);
+  --color-popover: var(--section);
+  --color-popover-foreground: var(--ink);
+  --color-card: var(--section);
+  --color-card-foreground: var(--ink);
+
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-2xl: 0px;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--rule);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "ss01", "cv11";
+    overflow-x: hidden;
+    overflow-y: scroll;
+    /* Firefox: invisible by default */
+    scrollbar-width: none;
+    transition: scrollbar-color 0.3s ease;
+
+    /* Minor Root Font Sizing (dynamic premium scale) */
+    font-size: 15px; /* Mobile base */
+  }
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px; /* Tablet base */
+    }
+  }
+  @media (min-width: 1024px) {
+    html {
+      font-size: 17px; /* Desktop base */
+    }
+  }
+  @media (min-width: 1440px) {
+    html {
+      font-size: 18px; /* Large display scale */
+    }
+  }
+  html.scrollbar-visible {
+    /* Firefox: reveal thumb on hover near edge */
+    scrollbar-width: thin;
+    scrollbar-color: var(--ink-muted) transparent;
+  }
+
+  /* Custom scrollbar styling for Chrome/Safari/Edge */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  /* Invisible scrollbar thumb by default for a clean, print-like layout */
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  /* Reveal scrollbar thumb when mouse is near the right edge */
+  html.scrollbar-visible ::-webkit-scrollbar-thumb {
+    background: var(--ink-muted);
+    border: 2px solid var(--bg);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--ink) !important;
+  }
+
+  html.scroll-locked,
+  body.scroll-locked {
+    overflow: hidden !important;
+    height: 100vh !important;
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE/Edge */
+  }
+  
+  html.scroll-locked::-webkit-scrollbar,
+  body.scroll-locked::-webkit-scrollbar {
+    display: none !important; /* Chrome/Safari/Opera */
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-feature-settings: "ss01";
+    overflow-x: hidden;
+    max-width: 100%;
+    line-height: 1.7;
+  }
+
+  video {
+    background-color: transparent !important;
+  }
+
+  ::selection {
+    background: var(--ink);
+    color: var(--on-dark);
+  }
+
+  /* Lenis smooth scroll */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .editorial-rule {
+    border-top: 1px solid var(--rule);
+  }
+
+  .num-mono {
+    font-feature-settings: "tnum", "ss01";
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ── TYPOGRAPHY: never clip, always wrap ──────────────── */
+  .display-clamp {
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    /* CRITICAL: never clip headings */
+    overflow: visible;
+    min-height: auto;
+    height: auto;
+  }
+
+  .display-mega {
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    overflow: visible;
+    min-height: auto;
+    height: auto;
+  }
+
+  .eyebrow {
+    font-size: 15px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--ink-muted);
+  }
+
+  .hairline {
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .container-editorial {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
+    max-width: 1680px;
+  }
+
+  /* ── DESIGN SYSTEM TYPOGRAPHY SCALE ──────────────── */
+  .text-h1 {
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  .text-h2 {
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  .text-h3 {
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  .text-h4 {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    line-height: 1.3;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .text-body-lg {
+    font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .text-body {
+    font-size: clamp(0.925rem, 1.1vw, 1.05rem);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+  .text-caption {
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* ── DESIGN SYSTEM BUTTON SCALE ──────────────────── */
+  .btn-base {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    padding-inline: 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    border-radius: 2px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    user-select: none;
+  }
+  .btn-base:active {
+    transform: scale(0.98);
+  }
+
+  .btn-primary {
+    background-color: var(--ink);
+    color: var(--on-dark);
+    border: 1px solid var(--ink);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+  .btn-primary:hover {
+    background-color: var(--steel);
+    border-color: var(--steel);
+    color: #ffffff;
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--ink);
+    border: 1px solid rgba(27, 27, 27, 0.3);
+  }
+  .btn-secondary:hover {
+    border-color: var(--ink);
+    background-color: var(--ink);
+    color: var(--on-dark);
+  }
+
+  .btn-dark {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .btn-dark:hover {
+    border-color: #ffffff;
+    background-color: #ffffff;
+    color: var(--ink);
+  }
+
+  /* ── CARD SURFACES ──────────────────────────────── */
+  .card-surface {
+    background-color: var(--surface);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  .card-surface:hover {
+    border-color: var(--steel);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  }
+
+  .link-underline {
+    position: relative;
+    display: inline-block;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    background: currentColor;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .link-underline:hover::after,
+  .group:hover .link-underline::after {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  /* ── REVEAL: fade-up (does NOT clip) ─────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /*
+   * reveal-mask: a GSAP-style text reveal.
+   * overflow:hidden is intentional here for the wipe-up animation.
+   * We add enough padding so descenders are never cut off.
+   * Height is auto — the container grows with content.
+   */
+  .reveal-mask {
+    overflow: hidden;
+    /* generous bottom padding prevents descender clipping */
+    padding-bottom: 0.2em;
+    margin-bottom: -0.2em;
+    /* never constrain height */
+    height: auto;
+    min-height: auto;
+  }
+  .reveal-mask > * {
+    display: block;
+    transform: translateY(105%);
+    transition: transform 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+    /* children must also be visible */
+    overflow: visible;
+  }
+  .reveal-mask.is-visible > * {
+    transform: none;
+  }
+
+  /* ── GRAIN texture ────────────────────────────────────── */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.4) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+
+  /* ── Ken Burns image animation ────────────────────────── */
+  @keyframes kenburns {
+    0%   { transform: scale(1) translate(0, 0); }
+    100% { transform: scale(1.06) translate(-0.3%, -0.3%); }
+  }
+  .animate-kenburns {
+    animation: kenburns 7s ease-out forwards;
+  }
+}
