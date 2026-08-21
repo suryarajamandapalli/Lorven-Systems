@@ -295,7 +295,7 @@ function ContactPage() {
                 BUSINESS ENQUIRIES
               </span>
               <div className="space-y-1 text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
-                <p>Tenders: <a href="mailto:procurement@lorvensystem.in" className="text-ink font-semibold hover:text-steel transition-colors">procurement@lorvensystem.in</a></p>
+                <p>Tenders: <a href="mailto:procurement@lorvensystems.in" className="text-ink font-semibold hover:text-steel transition-colors">procurement@lorvensystems.in</a></p>
                 <p>Hours: Mon – Sat | 09:00 – 18:00 IST</p>
               </div>
             </div>
