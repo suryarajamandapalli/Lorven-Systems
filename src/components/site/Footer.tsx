@@ -26,16 +26,41 @@ export function Footer() {
           <div className="col-span-6 md:col-span-2">
             <p className="eyebrow !text-on-dark/60 !text-[10px] !tracking-[0.12em]">Products</p>
             <ul className="mt-4 space-y-2 text-xs">
-              {PRODUCT_INDEX.map((p) => (
-                <li key={p.slug}>
-                  <a
-                    href={`/products/${p.slug}`}
-                    className="link-underline opacity-85 hover:opacity-100"
-                  >
-                    {p.title}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link to="/products/wagons/wli" className="link-underline opacity-85 hover:opacity-100">
+                  WLI (Water Level)
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/electric-locomotive/ifd" className="link-underline opacity-85 hover:opacity-100">
+                  IFD (Intelligent Field)
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/snt/ips" className="link-underline opacity-85 hover:opacity-100">
+                  IPS (Integrated Power)
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/snt/rdpms" className="link-underline opacity-85 hover:opacity-100">
+                  RDPMS (Diagnostics)
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/wagons/ahabd" className="link-underline opacity-85 hover:opacity-100">
+                  AHABD (Axle Box)
+                </Link>
+              </li>
+              <li>
+                <Link to="/products/electric-locomotive/simulators" className="link-underline opacity-85 hover:opacity-100">
+                  Simulators
+                </Link>
+              </li>
+              <li className="pt-1">
+                <Link to="/products" className="text-white/60 hover:text-white font-medium text-[11px] uppercase tracking-wider block">
+                  All Products →
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -45,14 +70,19 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-xs">
               {SERVICE_INDEX.map((s) => (
                 <li key={s.slug}>
-                  <a
-                    href={`/services/${s.slug}`}
+                  <Link
+                    to={`/services/${s.slug}`}
                     className="link-underline opacity-85 hover:opacity-100"
                   >
                     {s.title}
-                  </a>
+                  </Link>
                 </li>
               ))}
+              <li className="pt-1">
+                <Link to="/services" className="text-white/60 hover:text-white font-medium text-[11px] uppercase tracking-wider block">
+                  All Services →
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -62,12 +92,17 @@ export function Footer() {
             <ul className="mt-4 space-y-2 text-xs">
               <li>
                 <Link to="/about" className="link-underline opacity-85 hover:opacity-100">
-                  About
+                  About LorVen
                 </Link>
               </li>
               <li>
                 <Link to="/quality" className="link-underline opacity-85 hover:opacity-100">
-                  Quality
+                  Quality Assurance
+                </Link>
+              </li>
+              <li>
+                <Link to="/careers" className="link-underline opacity-85 hover:opacity-100">
+                  Careers
                 </Link>
               </li>
               <li>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lorven-systems.vercel.app/</loc>
@@ -7,6 +7,11 @@
   </url>
   <url>
     <loc>https://lorven-systems.vercel.app/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lorven-systems.vercel.app/quality</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -53,12 +58,47 @@
   <url>
     <loc>https://lorven-systems.vercel.app/services</loc>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lorven-systems.vercel.app/services/product-dev</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lorven-systems.vercel.app/quality</loc>
+    <loc>https://lorven-systems.vercel.app/services/signalling-design</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lorven-systems.vercel.app/services/kavach-installation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lorven-systems.vercel.app/services/system-integration</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lorven-systems.vercel.app/services/ems</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lorven-systems.vercel.app/services/testing-commissioning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lorven-systems.vercel.app/careers</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://lorven-systems.vercel.app/projects</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://lorven-systems.vercel.app/contact</loc>

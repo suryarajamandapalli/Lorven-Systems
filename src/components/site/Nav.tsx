@@ -135,7 +135,7 @@ export function Nav({ transparent = false }: { transparent?: boolean }) {
 
         <div className="container-editorial flex h-[56px] items-center justify-between lg:justify-center lg:gap-x-12">
           {/* Left Nav */}
-          <nav className="hidden items-center gap-10 text-[11px] lg:text-[13px] font-medium tracking-[0.15em] lg:flex">
+          <nav className="hidden items-center gap-7 xl:gap-9 text-[11px] lg:text-[12.5px] font-medium tracking-[0.15em] lg:flex">
             <div
               style={{
                 opacity: navReady ? 1 : 0,
@@ -146,6 +146,19 @@ export function Nav({ transparent = false }: { transparent?: boolean }) {
             >
               <NavLink to="/about" current={pathname} solid={solid}>
                 ABOUT
+              </NavLink>
+            </div>
+
+            <div
+              style={{
+                opacity: navReady ? 1 : 0,
+                transform: navReady ? "translateX(0)" : "translateX(30px)",
+                transition:
+                  "opacity 800ms cubic-bezier(0.22,1,0.36,1) 50ms, transform 900ms cubic-bezier(0.22,1,0.36,1) 50ms",
+              }}
+            >
+              <NavLink to="/quality" current={pathname} solid={solid}>
+                QUALITY
               </NavLink>
             </div>
 
@@ -194,7 +207,7 @@ export function Nav({ transparent = false }: { transparent?: boolean }) {
           </Link>
 
           {/* Right Nav */}
-          <nav className="hidden items-center gap-10 text-[11px] lg:text-[13px] font-medium tracking-[0.15em] lg:flex">
+          <nav className="hidden items-center gap-7 xl:gap-9 text-[11px] lg:text-[12.5px] font-medium tracking-[0.15em] lg:flex">
             <div
               ref={servicesTrigRef}
               className="relative py-2"
@@ -684,6 +697,19 @@ function MobileNav({
             </Link>
           </div>
 
+          <div className="border-t border-rule/20 pt-4">
+            <Link
+              to="/quality"
+              onClick={onClose}
+              className={`flex items-baseline justify-between ${
+                pathname.startsWith("/quality") ? "text-ink font-semibold" : "text-ink/75"
+              }`}
+            >
+              <span className="text-3xl font-light">QUALITY</span>
+              <span className="num-mono text-[10px] text-ink-muted">02</span>
+            </Link>
+          </div>
+
           <div className="border-t border-rule/20 pt-4 space-y-4">
             <button
               onClick={() => setProductsOpen(!productsOpen)}
@@ -699,7 +725,7 @@ function MobileNav({
                   {productsOpen ? "▲" : "▼"}
                 </span>
               </span>
-              <span className="num-mono text-[10px] text-ink-muted">02</span>
+              <span className="num-mono text-[10px] text-ink-muted">03</span>
             </button>
 
             {productsOpen && (
@@ -756,7 +782,7 @@ function MobileNav({
                   {servicesOpen ? "▲" : "▼"}
                 </span>
               </span>
-              <span className="num-mono text-[10px] text-ink-muted">03</span>
+              <span className="num-mono text-[10px] text-ink-muted">04</span>
             </button>
 
             {servicesOpen && (
@@ -789,7 +815,7 @@ function MobileNav({
               }`}
             >
               <span className="text-3xl font-light">CONTACT</span>
-              <span className="num-mono text-[10px] text-ink-muted">04</span>
+              <span className="num-mono text-[10px] text-ink-muted">05</span>
             </Link>
           </div>
         </nav>

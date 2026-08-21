@@ -76,6 +76,7 @@ export const SERVICE_INDEX = [
 export const PRIMARY_NAV = [
   { to: "/", label: "Index" },
   { to: "/about", label: "About" },
+  { to: "/quality", label: "Quality" },
   { to: "/products", label: "Products" },
   { to: "/services", label: "Services" },
   { to: "/projects", label: "Projects" },

@@ -240,6 +240,25 @@ function About() {
             </div>
           </div>
 
+          {/* Link to Dedicated Quality Page */}
+          <div className="gsap-reveal bg-surface border border-rule/25 rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-2 max-w-2xl">
+              <span className="text-xs font-mono font-bold text-steel uppercase tracking-widest">QUALITY FRAMEWORK</span>
+              <h3 className="text-lg md:text-xl font-light text-ink uppercase">
+                Explore Our Complete Quality Management System
+              </h3>
+              <p className="text-xs md:text-sm text-ink-muted font-light leading-relaxed">
+                Learn about our quality policy, staged product testing, burn-in screening, and compliance assurance protocols across design and manufacturing.
+              </p>
+            </div>
+            <Link
+              to="/quality"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-ink text-white text-xs font-mono font-bold uppercase tracking-wider rounded hover:bg-steel transition-colors shrink-0 cursor-pointer shadow-sm"
+            >
+              View Quality Page →
+            </Link>
+          </div>
+
         </div>
       </section>
 
@@ -259,6 +278,7 @@ function About() {
             items: [
               { label: "Manufacturing Infrastructure", href: "#infrastructure" },
               { label: "ISO 9001:2015 Certification", href: "#certification" },
+              { label: "Quality Management System →", href: "/quality" },
             ],
           },
         ]}
