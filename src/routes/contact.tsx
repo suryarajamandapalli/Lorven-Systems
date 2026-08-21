@@ -341,7 +341,7 @@ function ContactPage() {
                         id="fullName"
                         type="text"
                         required
-                        placeholder="e.g. Rajesh Sharma"
+                        placeholder="Enter full name"
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         className="w-full bg-bg border border-rule/30 px-3.5 sm:px-4 py-3 sm:py-3.5 text-base sm:text-sm text-ink focus:border-steel focus:outline-none transition-colors rounded-md sm:rounded-sm"
@@ -355,7 +355,7 @@ function ContactPage() {
                         id="email"
                         type="email"
                         required
-                        placeholder="name@organization.com"
+                        placeholder="Enter work email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full bg-bg border border-rule/30 px-3.5 sm:px-4 py-3 sm:py-3.5 text-base sm:text-sm text-ink focus:border-steel focus:outline-none transition-colors rounded-md sm:rounded-sm"
@@ -371,7 +371,7 @@ function ContactPage() {
                       <input
                         id="organization"
                         type="text"
-                        placeholder="e.g. South Central Railway / OEM"
+                        placeholder="Enter organization name"
                         value={formData.organization}
                         onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                         className="w-full bg-bg border border-rule/30 px-3.5 sm:px-4 py-3 sm:py-3.5 text-base sm:text-sm text-ink focus:border-steel focus:outline-none transition-colors rounded-md sm:rounded-sm"
@@ -385,7 +385,7 @@ function ContactPage() {
                         id="phone"
                         type="tel"
                         required
-                        placeholder="+91 98765 43210"
+                        placeholder="Enter phone number"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full bg-bg border border-rule/30 px-3.5 sm:px-4 py-3 sm:py-3.5 text-base sm:text-sm text-ink focus:border-steel focus:outline-none transition-colors rounded-md sm:rounded-sm"
@@ -430,7 +430,7 @@ function ContactPage() {
                       required
                       minLength={20}
                       maxLength={3000}
-                      placeholder="Please outline system specifications, target deployment schedule, or technical queries (minimum 20 characters)..."
+                      placeholder="Enter project details and requirements..."
                       value={formData.details}
                       onChange={(e) => setFormData({ ...formData, details: e.target.value })}
                       className="w-full bg-bg border border-rule/30 px-3.5 sm:px-4 py-3 sm:py-3.5 text-base sm:text-sm text-ink focus:border-steel focus:outline-none transition-colors rounded-md sm:rounded-sm resize-none"
