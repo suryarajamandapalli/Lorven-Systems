@@ -166,7 +166,7 @@ function About() {
                 Our engineering operations integrate hardware schematic design, multilayer PCB layout, embedded firmware development, mechanical enclosure engineering, software validation, and environmental testing.
               </p>
               <p>
-                Every product line is engineered to comply with applicable RDSO specifications and international railway standards including EN 50155, EN 50121, EN 61373, and IEC 60571.
+                Products are designed and validated against the applicable RDSO specifications, Indian Railway requirements and relevant international railway standards, based on product function, installation environment and contractual scope.
               </p>
             </div>
           </div>
