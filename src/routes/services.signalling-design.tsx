@@ -6,7 +6,7 @@ import { useRef } from "react";
 // Assets
 import serviceDesign from "@/assets/service-design.png";
 import sntHeroPremium from "@/assets/snt-hero-premium.jpg";
-import depot from "@/assets/depot.jpg";
+import signallingHero from "@/assets/Hero Images/Slide_16_Signalling_Design_Services.jpg";
 
 import { createSeoMeta } from "@/lib/seo";
 
@@ -233,7 +233,7 @@ function SignallingDesignRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={signallingHero}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

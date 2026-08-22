@@ -1,4 +1,4 @@
-﻿import { useGsapReveal } from "@/hooks/use-reveal";
+import { useGsapReveal } from "@/hooks/use-reveal";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef } from "react";
 
@@ -6,7 +6,6 @@ import { useRef } from "react";
 // Assets
 import smtLine from "@/assets/smt-line.jpg";
 import factoryHall from "@/assets/factory-hall.jpg";
-import depot from "@/assets/depot.jpg";
 
 import { createSeoMeta } from "@/lib/seo";
 
@@ -231,7 +230,7 @@ function EmsRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={factoryHall}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

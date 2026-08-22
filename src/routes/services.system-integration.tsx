@@ -6,7 +6,7 @@ import { useRef } from "react";
 // Assets
 import factoryHall from "@/assets/factory-hall.jpg";
 import smtLine from "@/assets/smt-line.jpg";
-import depot from "@/assets/depot.jpg";
+import sntHero from "@/assets/snt-hero-premium.jpg";
 
 import { createSeoMeta } from "@/lib/seo";
 
@@ -71,7 +71,7 @@ function SystemIntegrationRoute() {
     },
     {
       title: "Turnkey Field Execution",
-      desc: "Equipment room installation, FAT/SAT planning, correlation checking, and depot-level maintenance support."
+      desc: "Equipment room installation, FAT/SAT planning, correlation checking, and sntHero-level maintenance support."
     }
   ];
 
@@ -225,7 +225,7 @@ function SystemIntegrationRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={sntHero}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

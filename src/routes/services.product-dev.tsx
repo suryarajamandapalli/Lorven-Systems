@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 // Assets
 import pcbMacro from "@/assets/pcb-macro.jpg";
-import depot from "@/assets/depot.jpg";
+import factoryHall from "@/assets/factory-hall.jpg";
 
 import { createSeoMeta } from "@/lib/seo";
 
@@ -271,7 +271,7 @@ function ProductDevRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={factoryHall}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

@@ -6,7 +6,7 @@ import { useRef } from "react";
 // Assets
 import installationHeroPremium from "@/assets/installation-hero-premium.jpg";
 import engineers from "@/assets/engineers.jpg";
-import depot from "@/assets/depot.jpg";
+import commissioningHero from "@/assets/Hero Images/Slide_20_Installation_Testing_Commissioning.png";
 
 import { createSeoMeta } from "@/lib/seo";
 
@@ -77,7 +77,7 @@ function TestingCommissioningRoute() {
     },
     {
       title: "Depot Maintenance Assurance",
-      desc: "Long-term depot-level maintenance support and rapid field engineering deployment."
+      desc: "Long-term commissioningHero-level maintenance support and rapid field engineering deployment."
     }
   ];
 
@@ -170,7 +170,7 @@ function TestingCommissioningRoute() {
               Engineering Capabilities
             </h2>
             <p className="text-base text-ink-muted leading-relaxed font-light">
-              Turnkey field execution, equipment room cabling, integration testing, and depot-level maintenance support.
+              Turnkey field execution, equipment room cabling, integration testing, and commissioningHero-level maintenance support.
             </p>
           </div>
 
@@ -231,7 +231,7 @@ function TestingCommissioningRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={commissioningHero}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

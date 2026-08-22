@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 // Assets
 import wagons from "@/assets/wagons.jpg";
-import depot from "@/assets/depot.jpg";
+import ahabdHeroSlide from "@/assets/Hero Images/Slide_12_Advanced_Hot_Axle_Box_Detection.png";
 
 import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
@@ -209,7 +209,7 @@ function AhabdRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={ahabdHeroSlide}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

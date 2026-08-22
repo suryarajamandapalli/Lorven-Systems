@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 // Assets
 import simHero from "@/assets/simulator.jpg";
-import depot from "@/assets/depot.jpg";
+import simHeroSlide from "@/assets/Hero Images/Slide_13_Driving_Simulators.jpg";
 
 import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
@@ -192,7 +192,7 @@ function SimulatorsRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={simHeroSlide}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

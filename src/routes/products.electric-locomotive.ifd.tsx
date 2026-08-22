@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 // Assets
 import pcbMacro from "@/assets/pcb-macro.jpg";
-import depot from "@/assets/depot.jpg";
+import ifdHero from "@/assets/Hero Images/Slide_09_Intelligent_Field_Device_for_IR_NIYANTRAC.jpg";
 
 import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
@@ -202,7 +202,7 @@ function IfdRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={ifdHero}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

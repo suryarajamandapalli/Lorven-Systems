@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 // Assets
 import ipsHero from "@/assets/electrical-cabinet.jpg";
-import depot from "@/assets/depot.jpg";
+import ipsHeroSlide from "@/assets/Hero Images/Slide_11_IPS.jpg";
 
 import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
@@ -230,7 +230,7 @@ function IpsRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={ipsHeroSlide}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

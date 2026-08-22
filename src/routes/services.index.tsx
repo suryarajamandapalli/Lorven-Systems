@@ -8,8 +8,8 @@ import { useGsapReveal } from "@/hooks/use-reveal";
 import epdImg from "@/assets/Hero Images/Slide_15_Electronic_Product_Development.jpg";
 import signallingImg from "@/assets/Hero Images/Slide_16_Signalling_Design_Services.jpg";
 import kavachImg from "@/assets/Hero Images/Slide_17_KAVACH_Installation_Commissioning.jpg";
-import integrationImg from "@/assets/Hero Images/Slide_18_ST_System_Integration.jpg";
-import emsImg from "@/assets/Hero Images/Slide_19_Electronics_Manufacturing_Services.jpg";
+import electricalCabinet from "@/assets/electrical-cabinet.jpg";
+import smtLine from "@/assets/smt-line.jpg";
 import commissioningImg from "@/assets/Hero Images/Slide_20_Installation_Testing_Commissioning.png";
 import serviceHeroImg from "@/assets/service-design.png";
 
@@ -54,13 +54,13 @@ const SERVICES: ServiceCardData[] = [
     slug: "system-integration",
     title: "S&T System Integration",
     blurb: "End-to-end integration across signalling gears, telemetry channels, optical fiber backbones, and power systems.",
-    image: integrationImg,
+    image: electricalCabinet,
   },
   {
     slug: "ems",
     title: "Electronics Manufacturing Services",
     blurb: "High-precision SMT and THT assembly, conformal coating, automated optical inspection, and stress screening.",
-    image: emsImg,
+    image: smtLine,
   },
   {
     slug: "testing-commissioning",

@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 // Assets
 import coachBuild from "@/assets/coach-build.jpg";
-import depot from "@/assets/depot.jpg";
+import wliHeroSlide from "@/assets/Hero Images/Slide_08_Water_Level_Indicator.png";
 
 import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
@@ -49,7 +49,7 @@ function WliRoute() {
     },
     {
       title: "CRIS-integrated reporting",
-      desc: "Level, location, battery health and timestamp every 15 minutes over HTTPS with token-based security; CMM and ICMS integration for rake-, depot- and zone-wise monitoring. All data remains the property of Indian Railways.",
+      desc: "Level, location, battery health and timestamp every 15 minutes over HTTPS with token-based security; CMM and ICMS integration for rake-, wliHeroSlide- and zone-wise monitoring. All data remains the property of Indian Railways.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
           <path d="M3 12h3l3-9 4 18 3-12h5" strokeLinecap="round" strokeLinejoin="round" />
@@ -201,7 +201,7 @@ function WliRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={wliHeroSlide}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

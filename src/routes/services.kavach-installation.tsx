@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 // Assets
 import serviceInstallation from "@/assets/service-installation.png";
-import depot from "@/assets/depot.jpg";
+import kavachHero from "@/assets/Hero Images/Slide_17_KAVACH_Installation_Commissioning.jpg";
 
 import { createSeoMeta } from "@/lib/seo";
 
@@ -216,7 +216,7 @@ function KavachInstallationRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={kavachHero}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

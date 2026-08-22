@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 // Assets
 import simulator from "@/assets/simulator.jpg";
-import depot from "@/assets/depot.jpg";
+import kavachSimHero from "@/assets/Hero Images/Slide_14_KAVACH_Training_Simulators.jpg";
 
 import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
@@ -165,7 +165,7 @@ function KavachRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={kavachSimHero}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 // Assets
 import sntHero from "@/assets/snt-hero-premium.jpg";
-import depot from "@/assets/depot.jpg";
+import rdpmsHeroSlide from "@/assets/Hero Images/Slide_10_RDPMS.jpg";
 
 import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
@@ -262,7 +262,7 @@ function RdpmsRoute() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src={depot}
+            src={rdpmsHeroSlide}
             alt="Wayside Maintenance Depot"
             className="w-full h-full object-cover opacity-30 select-none pointer-events-none"
           />

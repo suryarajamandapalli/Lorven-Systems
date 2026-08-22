@@ -4,18 +4,22 @@ import { PageIndex } from "@/components/site/PageIndex";
 import { PRODUCT_INDEX } from "@/lib/site-data";
 import heroImg from "@/assets/factory-hall.jpg";
 
-import rdpmsImg from "@/assets/pcb-macro.jpg";
-import ipsImg from "@/assets/electrical-cabinet.jpg";
-import simImg from "@/assets/simulator.jpg";
-import wliImg from "@/assets/wagons.jpg";
-import ahabdImg from "@/assets/coach-build.jpg";
+import wliImg from "@/assets/Hero Images/Slide_08_Water_Level_Indicator.png";
+import ifdImg from "@/assets/Hero Images/Slide_09_Intelligent_Field_Device_for_IR_NIYANTRAC.jpg";
+import rdpmsImg from "@/assets/Hero Images/Slide_10_RDPMS.jpg";
+import ipsImg from "@/assets/Hero Images/Slide_11_IPS.jpg";
+import ahabdImg from "@/assets/Hero Images/Slide_12_Advanced_Hot_Axle_Box_Detection.png";
+import simImg from "@/assets/Hero Images/Slide_13_Driving_Simulators.jpg";
+import kavachImg from "@/assets/Hero Images/Slide_14_KAVACH_Training_Simulators.jpg";
 
 const PRODUCT_IMAGES: Record<string, string> = {
+  wli: wliImg,
+  ifd: ifdImg,
   rdpms: rdpmsImg,
   ips: ipsImg,
-  simulators: simImg,
-  wli: wliImg,
   ahabd: ahabdImg,
+  simulators: simImg,
+  kavach: kavachImg,
 };
 
 import { createSeoMeta } from "@/lib/seo";
