@@ -1,8 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { PageIndex } from "@/components/site/PageIndex";
 import { CTAStrip } from "@/components/site/CTAStrip";
 import { SERVICE_INDEX } from "@/lib/site-data";
+import { useGsapReveal } from "@/hooks/use-reveal";
 import engineers from "@/assets/engineers.jpg";
 import depot from "@/assets/depot.jpg";
 import pcbMacro from "@/assets/pcb-macro.jpg";
@@ -31,6 +32,8 @@ const IMG = [
 ];
 
 function ServicesIndex() {
+  useGsapReveal();
+
   return (
     <>
       <PageHero
@@ -69,10 +72,10 @@ function ServicesIndex() {
       <section className="border-t border-rule bg-bg py-20 md:py-28">
         <div className="container-editorial grid grid-cols-12 gap-8 md:gap-12">
           {SERVICE_INDEX.map((s, i) => (
-            <a
+            <Link
               key={s.slug}
-              href={`/services/${s.slug}`}
-              className="reveal group col-span-12 md:col-span-6 flex flex-col justify-between h-full bg-white border border-rule/15 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-500"
+              to={`/services/${s.slug}`}
+              className="gsap-reveal group col-span-12 md:col-span-6 flex flex-col justify-between h-full bg-white border border-rule/15 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-500 cursor-pointer"
             >
               <div className="aspect-[5/4] overflow-hidden bg-surface relative">
                 <img
@@ -107,7 +110,7 @@ function ServicesIndex() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

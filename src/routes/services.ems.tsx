@@ -20,28 +20,8 @@ export const Route = createFileRoute("/services/ems")({
 });
 
 function EmsRoute() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    // GSAP ScrollTrigger reveals
-    gsap.utils.toArray(".gsap-reveal").forEach((elem: any) => {
-      gsap.fromTo(
-        elem,
-        { y: 25, opacity: 0 },
-        {
-          scrollTrigger: {
-            trigger: elem,
-            start: "top 90%",
-            toggleActions: "play none none reverse",
-          },
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
-        }
-      );
-    });
-  }, { scope: containerRef });
+  
+  useGsapReveal();
 
   const capabilities = [
     {
@@ -102,7 +82,7 @@ function EmsRoute() {
   ];
 
   return (
-    <div ref={containerRef} className="bg-bg text-ink selection:bg-ink selection:text-on-dark antialiased">
+    <div className="bg-bg text-ink selection:bg-ink selection:text-on-dark antialiased">
       
       {/* 1. Hero Section */}
       <section className="relative min-h-screen bg-ink overflow-hidden flex flex-col justify-center pb-20 pt-28">

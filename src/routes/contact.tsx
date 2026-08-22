@@ -98,8 +98,7 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState({
     fullName: "",
     email: "",
     organization: "",
@@ -122,26 +121,7 @@ function ContactPage() {
     setRenderedAt(Date.now());
   }, []);
 
-  useGSAP(() => {
-    // GSAP ScrollTrigger reveals
-    gsap.utils.toArray(".gsap-reveal").forEach((elem: any) => {
-      gsap.fromTo(
-        elem,
-        { y: 25, opacity: 0 },
-        {
-          scrollTrigger: {
-            trigger: elem,
-            start: "top 90%",
-            toggleActions: "play none none reverse",
-          },
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
-        }
-      );
-    });
-  }, { scope: containerRef });
+  useGsapReveal();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -208,7 +188,7 @@ function ContactPage() {
   };
 
   return (
-    <div ref={containerRef} className="bg-bg text-ink selection:bg-ink selection:text-on-dark antialiased">
+    <div className="bg-bg text-ink selection:bg-ink selection:text-on-dark antialiased">
       
       {/* â”€â”€ PAGE HEADER: Compact breadcrumb + image banner â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="relative h-[220px] md:h-[260px] bg-ink overflow-hidden">

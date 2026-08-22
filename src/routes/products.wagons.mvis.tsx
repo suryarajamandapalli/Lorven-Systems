@@ -17,30 +17,11 @@ export const Route = createFileRoute("/products/wagons/mvis")({
 });
 
 function MvisRoute() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useGSAP(() => {
-    gsap.utils.toArray(".gsap-reveal").forEach((elem: any) => {
-      gsap.fromTo(
-        elem,
-        { y: 25, opacity: 0 },
-        {
-          scrollTrigger: {
-            trigger: elem,
-            start: "top 90%",
-            toggleActions: "play none none reverse",
-          },
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: "power2.out",
-        }
-      );
-    });
-  }, { scope: containerRef });
+  
+  useGsapReveal();
 
   return (
-    <div ref={containerRef} className="bg-bg text-ink selection:bg-ink selection:text-on-dark antialiased">
+    <div className="bg-bg text-ink selection:bg-ink selection:text-on-dark antialiased">
 
       {/* Full-Screen Coming Soon Hero */}
       <section className="relative min-h-screen bg-ink overflow-hidden flex flex-col items-center justify-center pt-28 pb-20 px-4">
