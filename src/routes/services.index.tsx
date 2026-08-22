@@ -142,7 +142,7 @@ function ServicesIndex() {
                   {/* Subtle Action Link */}
                   <div className="mt-6 pt-4 flex items-center justify-between border-t border-rule/10">
                     <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink/40 group-hover/card:text-ink transition-colors">
-                      Learn More
+                      Know More
                     </span>
                     <svg
                       width="16"
