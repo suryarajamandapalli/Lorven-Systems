@@ -13,7 +13,7 @@ import sntHero from "@/assets/snt-hero-real.jpg";
 export const Route = createFileRoute("/products/wagons/")({
   head: () => ({
     meta: [
-      { title: "Rolling Stock â€” LorVen Systems" },
+      { title: "Rolling Stock — LorVen Systems" },
       { name: "description", content: "Advanced monitoring and inspection systems for railway rolling stock, including freight wagons and passenger coaches." },
     ],
   }),
@@ -117,7 +117,7 @@ function WagonsProductPage() {
             <span className="num-mono text-[10px] text-ink-muted uppercase tracking-[0.2em] mb-8 block font-semibold">System 01</span>
             <h3 className="text-3xl font-light text-ink mb-6 uppercase">Acoustic Bearing Detectors</h3>
             <p className="text-base text-ink-muted leading-relaxed font-light">
-              Microphone arrays placed along the trackside that record the acoustic signature of every passing bearing. Proprietary DSP algorithms isolate fault frequenciesâ€”such as a cracked inner race or spallingâ€”from the immense background noise of a freight train.
+              Microphone arrays placed along the trackside that record the acoustic signature of every passing bearing. Proprietary DSP algorithms isolate fault frequencies—such as a cracked inner race or spalling—from the immense background noise of a freight train.
             </p>
           </div>
           <div className="h-[40vh] lg:h-auto border-l border-rule overflow-hidden bg-surface">
@@ -178,7 +178,7 @@ function WagonsProductPage() {
               The data from our trackside wagon monitors feeds directly into the larger signalling network. Explore the systems that control the mainline.
             </p>
             <Link to="/products/snt" className="group flex items-center gap-4 border-b border-rule pb-2 text-sm uppercase tracking-[0.2em] text-ink hover:text-steel hover:border-steel w-max transition-colors">
-              Continue to Signalling <span className="group-hover:translate-x-2 transition-transform">â†’</span>
+              Continue to Signalling <span className="group-hover:translate-x-2 transition-transform">→</span>
             </Link>
           </div>
         </div>

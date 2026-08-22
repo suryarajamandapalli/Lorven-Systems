@@ -1,4 +1,4 @@
-﻿import { useGsapReveal } from "@/hooks/use-reveal";
+import { useGsapReveal } from "@/hooks/use-reveal";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/react-start";
 import { z } from "zod";
@@ -281,7 +281,7 @@ function ContactPage() {
                       onClick={handleReset}
                       className="inline-flex items-center gap-2 px-6 py-2.5 bg-ink text-white text-xs font-mono font-bold uppercase tracking-wider rounded hover:bg-steel transition-colors cursor-pointer"
                     >
-                      â† Submit Another Enquiry
+                      ← Submit Another Enquiry
                     </button>
                   </div>
                 </div>
@@ -302,7 +302,11 @@ function ContactPage() {
 
                   {submitError && (
                     <div className="p-4 bg-red-500/10 border border-red-500/30 rounded-md text-xs sm:text-sm text-red-600 font-medium leading-relaxed flex items-start gap-2.5">
-                      <span className="shrink-0 font-bold">âš ï¸</span>
+                      <svg className="w-4 h-4 text-red-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="8" x2="12" y2="12" />
+                        <line x1="12" y1="16" x2="12.01" y2="16" />
+                      </svg>
                       <span>{submitError}</span>
                     </div>
                   )}
@@ -431,7 +435,11 @@ function ContactPage() {
 
                   {/* Caution Notice Box */}
                   <div className="p-3.5 bg-bg/80 border border-amber-500/25 rounded-md text-xs text-ink-muted leading-relaxed font-light flex items-start gap-2.5">
-                    <span className="text-amber-600 font-bold shrink-0 text-sm">âš ï¸</span>
+                    <svg className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+                      <line x1="12" y1="9" x2="12" y2="13" />
+                      <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
                     <span>
                       <strong className="text-ink font-medium">Caution:</strong> Please do not upload confidential specifications through this form. Secure document exchange can be arranged after initial contact.
                     </span>
@@ -451,7 +459,7 @@ function ContactPage() {
                         <span>Validating &amp; Submitting...</span>
                       </>
                     ) : (
-                      <span>Submit Enquiry â†’</span>
+                      <span>Submit Enquiry →</span>
                     )}
                   </button>
                 </form>
@@ -475,7 +483,7 @@ function ContactPage() {
               <h3 className="text-base sm:text-lg font-bold text-ink uppercase">LorVen Systems Pvt. Ltd.</h3>
               <div className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light space-y-1">
                 <p>Zona Crescent, 8-682/B1 & B2, Road No. 12,</p>
-                <p>Banjara Hills, Hyderabad, Telangana â€“ 500034</p>
+                <p>Banjara Hills, Hyderabad, Telangana – 500034</p>
                 <p className="text-xs text-steel font-medium pt-1">Landmark: Zona Towers Building, 2nd Floor, Beside Ratnadeep</p>
               </div>
             </div>
@@ -498,7 +506,7 @@ function ContactPage() {
               </span>
               <div className="space-y-1 text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
                 <p>Tenders: <a href="mailto:procurement@lorvensystems.in" className="text-ink font-semibold hover:text-steel transition-colors">procurement@lorvensystems.in</a></p>
-                <p>Hours: Mon â€“ Sat | 09:00 â€“ 18:00 IST</p>
+                <p>Hours: Mon – Sat | 09:00 – 18:00 IST</p>
               </div>
             </div>
 
@@ -514,7 +522,7 @@ function ContactPage() {
               Office Location
             </h2>
             <div className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
-              <p>Zona Crescent, 8-682/B1 & B2, Road No. 12, Banjara Hills, Hyderabad, Telangana â€“ 500034</p>
+              <p>Zona Crescent, 8-682/B1 & B2, Road No. 12, Banjara Hills, Hyderabad, Telangana – 500034</p>
               <p className="text-xs text-steel font-medium mt-1">Landmark: Zona Towers Building, 2nd Floor, Beside Ratnadeep</p>
             </div>
           </div>
@@ -559,7 +567,7 @@ function ContactPage() {
                 href="#enquiry-form"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3.5 sm:py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-md sm:rounded-sm shadow-md"
               >
-                Consult Our Engineers â†’
+                Consult Our Engineers →
               </a>
             </div>
           </div>

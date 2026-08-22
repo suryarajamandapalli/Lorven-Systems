@@ -12,7 +12,7 @@ import { createSeoMeta } from "@/lib/seo";
 export const Route = createFileRoute("/services/kavach-installation")({
   head: () => createSeoMeta({
     title: "KAVACH Installation & Commissioning | LorVen Systems",
-    description: "Installation, integration, testing and verification services to KAVACH OEMs and railway units â€” per OEM documentation and RDSO/SPN/196/2020.",
+    description: "Installation, integration, testing and verification services to KAVACH OEMs and railway units — per OEM documentation and RDSO/SPN/196/2020.",
     path: "/services/kavach-installation",
   }),
   component: KavachInstallationRoute,
@@ -25,7 +25,7 @@ function KavachInstallationRoute() {
   const capabilities = [
     {
       num: "01",
-      title: "Onboard â€” Locomotive Works",
+      title: "Onboard — Locomotive Works",
       bullets: [
         "Installation of KAVACH onboard equipment on electric locomotives (WAP/WAG): Vital Computer, DMI, brake interface unit, radio and antenna systems, RFID reader and cabling per OEM wiring schedules.",
         "Cable routing, termination and continuity/insulation verification against released wiring drawings.",
@@ -36,9 +36,9 @@ function KavachInstallationRoute() {
       num: "02",
       title: "Station & Trackside Works",
       bullets: [
-        "Installation of Station KAVACH equipment â€” stationary KAVACH unit, tower and radio infrastructure, interface wiring to interlocking.",
-        "RFID tag installation â€” normal, adjustment line, TIN discrimination and LC gate tags â€” with programming and placement per approved tag layout (Annexure requirements).",
-        "Independent tag-data field verification â€” absolute location, TIN, tag type, unique ID â€” against approved station data, with formal discrepancy reporting.",
+        "Installation of Station KAVACH equipment — stationary KAVACH unit, tower and radio infrastructure, interface wiring to interlocking.",
+        "RFID tag installation — normal, adjustment line, TIN discrimination and LC gate tags — with programming and placement per approved tag layout (Annexure requirements).",
+        "Independent tag-data field verification — absolute location, TIN, tag type, unique ID — against approved station data, with formal discrepancy reporting.",
         "Support during IFAT / OFAT and field trials."
       ]
     }
@@ -100,7 +100,7 @@ function KavachInstallationRoute() {
             </div>
 
             <p className="text-base md:text-xl text-white/90 leading-relaxed font-light max-w-3xl border-l-2 border-steel pl-6 pt-2">
-              Installation, integration, testing and verification services to KAVACH OEMs and railway units â€” per OEM documentation and RDSO/SPN/196/2020
+              Installation, integration, testing and verification services to KAVACH OEMs and railway units — per OEM documentation and RDSO/SPN/196/2020
             </p>
           </div>
         </div>
@@ -125,7 +125,7 @@ function KavachInstallationRoute() {
             </h2>
             <div className="border-t border-rule/20 pt-6 space-y-4">
               <p className="text-lg md:text-xl text-black leading-relaxed font-light">
-                Installation, integration, testing and verification services to KAVACH OEMs and railway units â€” per OEM documentation and RDSO/SPN/196/2020.
+                Installation, integration, testing and verification services to KAVACH OEMs and railway units — per OEM documentation and RDSO/SPN/196/2020.
               </p>
               <p className="text-base text-ink-muted leading-relaxed font-light">
                 LorVen Systems provides certified field engineering, equipment mounting, cabling, RFID tag deployment, and system verification services across locomotive and trackside installations.
@@ -178,7 +178,7 @@ function KavachInstallationRoute() {
                   <ul className="space-y-3 border-t border-rule/15 pt-4">
                     {cap.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="flex items-start gap-3 text-sm text-ink-muted leading-relaxed font-light">
-                        <span className="text-steel font-bold text-xs mt-1">â€¢</span>
+                        <span className="text-steel font-bold text-xs mt-1">”¢</span>
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -234,7 +234,7 @@ function KavachInstallationRoute() {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm shadow-md"
               >
-                Consult Our Engineers â†’
+                Consult Our Engineers →
               </Link>
             </div>
           </div>

@@ -14,7 +14,7 @@ import wagons from "@/assets/wagons.jpg";
 export const Route = createFileRoute("/products/coaches")({
   head: () => ({
     meta: [
-      { title: "Passenger Coaches â€” LorVen Systems" },
+      { title: "Passenger Coaches — LorVen Systems" },
       { name: "description", content: "Human-centric engineering for passenger coaches. HVAC controllers, passenger information systems, and intelligent lighting." },
     ],
   }),
@@ -217,7 +217,7 @@ function CoachesProductPage() {
               From passenger comfort to heavy industrial freight. Discover our condition monitoring and telemetry systems for freight wagons.
             </p>
             <Link to="/products/wagons" className="group flex items-center gap-4 border-b border-rule pb-2 text-sm uppercase tracking-[0.2em] text-ink hover:text-steel hover:border-steel w-max transition-colors">
-              Continue to Wagons <span className="group-hover:translate-x-2 transition-transform">â†’</span>
+              Continue to Wagons <span className="group-hover:translate-x-2 transition-transform">→</span>
             </Link>
           </div>
           <div className="gsap-reveal hidden md:block overflow-hidden h-[40vh] bg-surface rounded-xl border border-rule/10 shadow-sm">

@@ -11,7 +11,7 @@ import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/wagons/ahabd")({
   head: () => createSeoMeta({
-    title: "AHABD â€“ Acoustic Hot Axle Box Detector | LorVen Systems",
+    title: "AHABD – Acoustic Hot Axle Box Detector | LorVen Systems",
     description: "Trackside acoustic & thermal sensing layer mapping axle conditions for rolling stock.",
     path: "/products/wagons/ahabd",
     structuredData: getProductSchema(
@@ -31,7 +31,7 @@ function AhabdRoute() {
   const features = [
     {
       title: "Builds on the existing installation",
-      desc: "An identity layer over the trackside temperature sensing already in place â€” it complements it, it does not replace it.",
+      desc: "An identity layer over the trackside temperature sensing already in place — it complements it, it does not replace it.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
           <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" strokeLinecap="round" strokeLinejoin="round" />
@@ -49,7 +49,7 @@ function AhabdRoute() {
     },
     {
       title: "It does not guess",
-      desc: "Where an identity cannot be established with confidence, that is reported as such â€” an honest gap, never a fabricated attribution.",
+      desc: "Where an identity cannot be established with confidence, that is reported as such — an honest gap, never a fabricated attribution.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
           <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" />
@@ -76,7 +76,7 @@ function AhabdRoute() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src={wagons}
-            alt="AHABD â€” Advanced Hot Axle Box Detection"
+            alt="AHABD — Advanced Hot Axle Box Detection"
             className="w-full h-full object-cover opacity-35 select-none pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent z-10" />
@@ -105,7 +105,7 @@ function AhabdRoute() {
             </div>
 
             <p className="text-base md:text-lg text-white/90 leading-relaxed font-light max-w-3xl border-l-2 border-steel/40 pl-6 pt-2">
-              Trackside instrumentation already records every axle's temperature as a train passes â€” but readings are held against bare axle numbers. AHABD establishes which coach each temperature reading belongs to.
+              Trackside instrumentation already records every axle's temperature as a train passes — but readings are held against bare axle numbers. AHABD establishes which coach each temperature reading belongs to.
             </p>
           </div>
         </div>
@@ -124,9 +124,9 @@ function AhabdRoute() {
         <div className="container-editorial grid grid-cols-12 gap-8 md:gap-16 items-center">
           {/* Left Column */}
           <div className="col-span-12 lg:col-span-7 gsap-reveal space-y-6">
-            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS â€” ROLLING STOCK</span>
+            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS — ROLLING STOCK</span>
             <h2 className="text-3xl md:text-4xl font-extralight leading-tight text-ink uppercase">
-              AHABD â€” Advanced Hot Axle Box Detection
+              AHABD — Advanced Hot Axle Box Detection
             </h2>
             <div className="border-t border-rule/20 pt-6 space-y-4">
               <p className="text-lg md:text-xl text-black leading-relaxed font-light">
@@ -136,7 +136,7 @@ function AhabdRoute() {
                 For every train passing a monitoring point, AHABD establishes which coach each temperature reading belongs to, delivering a complete, identified record: each coach named, each axle temperature attached, and overheating flagged for attention.
               </p>
               <p className="text-sm text-ink-muted leading-relaxed font-mono uppercase tracking-wider pt-2">
-                Under staged development â€” core capability verification in progress
+                Under staged development — core capability verification in progress
               </p>
             </div>
           </div>
@@ -154,7 +154,7 @@ function AhabdRoute() {
         </div>
       </section>
 
-      {/* 3. Problem â†’ Solution Narrative Panels */}
+      {/* 3. Problem → Solution Narrative Panels */}
       <section className="bg-section border-t border-rule/20 py-12 md:py-16">
         <div className="container-editorial space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 gsap-reveal">
@@ -227,7 +227,7 @@ function AhabdRoute() {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm shadow-md"
               >
-                Consult Our Engineers â†’
+                Consult Our Engineers →
               </Link>
             </div>
           </div>

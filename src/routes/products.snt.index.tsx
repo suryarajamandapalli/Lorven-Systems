@@ -15,7 +15,7 @@ import locoThumb from "@/assets/loco-card-thumb.png";
 export const Route = createFileRoute("/products/snt/")({
   head: () => ({
     meta: [
-      { title: "Signalling & Telecom â€” LorVen Systems" },
+      { title: "Signalling & Telecom — LorVen Systems" },
       { name: "description", content: "Mission-critical signalling and telecommunication systems for modern railway networks." },
     ],
   }),
@@ -85,7 +85,7 @@ function SNTProductPage() {
                 Railway signalling is unforgiving. A failure in communication or logic doesn't just halt operations; it compromises safety. 
               </p>
               <p className="text-base text-ink-muted font-light leading-relaxed">
-                LorVenâ€™s SNT portfolio is built entirely around fail-safe architectures. From Integrated Power Supplies (IPS) that guarantee uninterrupted wayside operation, to ruggedized Data Loggers that record microsecond-level events, we engineer the invisible nervous system of modern railways.
+                LorVen’s SNT portfolio is built entirely around fail-safe architectures. From Integrated Power Supplies (IPS) that guarantee uninterrupted wayside operation, to ruggedized Data Loggers that record microsecond-level events, we engineer the invisible nervous system of modern railways.
               </p>
             </div>
             <div className="border-l border-rule pl-8 flex flex-col justify-center">
@@ -218,7 +218,7 @@ function SNTProductPage() {
               From wayside signals to onboard intelligence. Explore our high-power traction converters, auxiliary panels, and driver cabin interfaces.
             </p>
             <Link to="/products/electric-locomotive" className="group flex items-center gap-4 border-b border-rule pb-2 text-sm uppercase tracking-[0.2em] text-ink hover:text-steel hover:border-steel w-max transition-colors">
-              Continue to Electric Loco <span className="group-hover:translate-x-2 transition-transform">â†’</span>
+              Continue to Electric Loco <span className="group-hover:translate-x-2 transition-transform">→</span>
             </Link>
           </div>
           <div className="gsap-reveal hidden md:block overflow-hidden h-[40vh] rounded-xl border border-rule/10 shadow-md">

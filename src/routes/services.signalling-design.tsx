@@ -13,7 +13,7 @@ import { createSeoMeta } from "@/lib/seo";
 export const Route = createFileRoute("/services/signalling-design")({
   head: () => createSeoMeta({
     title: "Signalling Design Services | LorVen Systems",
-    description: "Indian Railways design standards and RDSO specifications â€” independent checking, formal design documentation.",
+    description: "Indian Railways design standards and RDSO specifications — independent checking, formal design documentation.",
     path: "/services/signalling-design",
   }),
   component: SignallingDesignRoute,
@@ -54,7 +54,7 @@ function SignallingDesignRoute() {
       num: "04",
       title: "KAVACH Designs",
       bullets: [
-        "Station KAVACH design per RDSO/SPN/196/2020 â€” approach/departure profiling and application data.",
+        "Station KAVACH design per RDSO/SPN/196/2020 — approach/departure profiling and application data.",
         "RFID tag layouts: normal, adjustment line, TIN discrimination and LC gate tags.",
         "Interlocking interface design and support through IFAT/OFAT."
       ]
@@ -117,7 +117,7 @@ function SignallingDesignRoute() {
             </div>
 
             <p className="text-base md:text-xl text-white/90 leading-relaxed font-light max-w-3xl border-l-2 border-steel pl-6 pt-2">
-              Indian Railways design standards and RDSO specifications â€” independent checking, formal design documentation
+              Indian Railways design standards and RDSO specifications — independent checking, formal design documentation
             </p>
           </div>
         </div>
@@ -142,7 +142,7 @@ function SignallingDesignRoute() {
             </h2>
             <div className="border-t border-rule/20 pt-6 space-y-4">
               <p className="text-lg md:text-xl text-black leading-relaxed font-light">
-                Indian Railways design standards and RDSO specifications â€” independent checking, formal design documentation.
+                Indian Railways design standards and RDSO specifications — independent checking, formal design documentation.
               </p>
               <p className="text-base text-ink-muted leading-relaxed font-light">
                 LorVen Systems provides turnkey signalling design, independent checking, and engineering documentation services across Outdoor, Electronic Interlocking (EI), MSDAC, and KAVACH subsystems.
@@ -195,7 +195,7 @@ function SignallingDesignRoute() {
                   <ul className="space-y-2.5 border-t border-rule/15 pt-4">
                     {cap.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="flex items-start gap-3 text-sm text-ink-muted leading-relaxed font-light">
-                        <span className="text-steel font-bold text-xs mt-1">â€¢</span>
+                        <span className="text-steel font-bold text-xs mt-1">”¢</span>
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -251,7 +251,7 @@ function SignallingDesignRoute() {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm shadow-md"
               >
-                Consult Our Engineers â†’
+                Consult Our Engineers →
               </Link>
             </div>
           </div>

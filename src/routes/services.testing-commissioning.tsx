@@ -193,7 +193,7 @@ function TestingCommissioningRoute() {
                   <ul className="space-y-3 border-t border-rule/15 pt-4">
                     {cap.bullets.map((bullet, bIdx) => (
                       <li key={bIdx} className="flex items-start gap-3 text-sm text-ink-muted leading-relaxed font-light">
-                        <span className="text-steel font-bold text-xs mt-1">â€¢</span>
+                        <span className="text-steel font-bold text-xs mt-1">”¢</span>
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -249,7 +249,7 @@ function TestingCommissioningRoute() {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm shadow-md"
               >
-                Consult Our Engineers â†’
+                Consult Our Engineers →
               </Link>
             </div>
           </div>

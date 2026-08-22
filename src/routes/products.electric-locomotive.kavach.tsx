@@ -40,7 +40,7 @@ function KavachRoute() {
     },
     {
       title: "Loco Pilot",
-      desc: "DMI indications and acknowledgements; modes of operation; brake interventions; SoS generation and handling â€” integrated with driving-simulator exercises for combined train-handling and ATP response training.",
+      desc: "DMI indications and acknowledgements; modes of operation; brake interventions; SoS generation and handling — integrated with driving-simulator exercises for combined train-handling and ATP response training.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
           <path d="M8 6H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-3M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2M8 6h8" strokeLinecap="round" strokeLinejoin="round" />
@@ -87,7 +87,7 @@ function KavachRoute() {
             </div>
 
             <p className="text-base md:text-lg text-white/90 leading-relaxed font-light max-w-3xl border-l-2 border-steel/40 pl-6 pt-2">
-              For Station Masters and Loco Pilots â€” KAVACH per RDSO/SPN/196/2020. Classroom-safe training at zonal railway training institutes, without occupying revenue infrastructure or live KAVACH equipment.
+              For Station Masters and Loco Pilots — KAVACH per RDSO/SPN/196/2020. Classroom-safe training at zonal railway training institutes, without occupying revenue infrastructure or live KAVACH equipment.
             </p>
           </div>
         </div>
@@ -106,13 +106,13 @@ function KavachRoute() {
         <div className="container-editorial grid grid-cols-12 gap-8 md:gap-16 items-center">
           {/* Left Column */}
           <div className="col-span-12 lg:col-span-7 gsap-reveal space-y-6">
-            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS â€” ELECTRIC LOCOMOTIVE</span>
+            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS — ELECTRIC LOCOMOTIVE</span>
             <h2 className="text-3xl md:text-4xl font-extralight leading-tight text-ink uppercase">
               KAVACH Training Simulators
             </h2>
             <div className="border-t border-rule/20 pt-6 space-y-4">
               <p className="text-lg md:text-xl text-black leading-relaxed font-light">
-                For Station Masters and Loco Pilots â€” KAVACH per RDSO/SPN/196/2020.
+                For Station Masters and Loco Pilots — KAVACH per RDSO/SPN/196/2020.
               </p>
               <p className="text-base text-ink-muted leading-relaxed font-light">
                 Classroom-safe training at zonal railway training institutes, without occupying revenue infrastructure or live KAVACH equipment.
@@ -183,7 +183,7 @@ function KavachRoute() {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm shadow-md"
               >
-                Consult Our Engineers â†’
+                Consult Our Engineers →
               </Link>
             </div>
           </div>

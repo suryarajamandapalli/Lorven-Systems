@@ -9,7 +9,7 @@ import wagons from "@/assets/wagons.jpg";
 export const Route = createFileRoute("/products/wagons/mvis")({
   head: () => ({
     meta: [
-      { title: "MVIS â€” Machine Vision Inspection System â€” LorVen Systems" },
+      { title: "MVIS — Machine Vision Inspection System — LorVen Systems" },
       { name: "description", content: "AI-powered wayside automated inspection system for detecting rolling stock undergear and mechanical defects in real time." },
     ],
   }),
@@ -29,7 +29,7 @@ function MvisRoute() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src={wagons}
-            alt="MVIS â€” Machine Vision Inspection System"
+            alt="MVIS — Machine Vision Inspection System"
             className="w-full h-full object-cover opacity-20 select-none pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30 z-10" />
@@ -76,7 +76,7 @@ function MvisRoute() {
               to="/contact"
               className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 border border-white/30 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] text-white/70 hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm"
             >
-              Discuss Your Requirements â†’
+              Discuss Your Requirements →
             </Link>
           </div>
         </div>

@@ -14,7 +14,7 @@ import coachThumb from "@/assets/coach-build.jpg";
 export const Route = createFileRoute("/products/electric-locomotive/")({
   head: () => ({
     meta: [
-      { title: "Electric Locomotive â€” LorVen Systems" },
+      { title: "Electric Locomotive — LorVen Systems" },
       { name: "description", content: "High-voltage traction, auxiliary power, and advanced driver interfaces for mainline electric locomotives." },
     ],
   }),
@@ -202,7 +202,7 @@ function LocoProductPage() {
               Step from the locomotive into the trainset. Discover our high-reliability passenger information systems, onboard diagnostics, and cabin comforts.
             </p>
             <Link to="/products/coaches" className="group flex items-center gap-4 border-b border-rule pb-2 text-sm uppercase tracking-[0.2em] text-ink hover:text-steel hover:border-steel w-max transition-colors">
-              Continue to Coaches <span className="group-hover:translate-x-2 transition-transform">â†’</span>
+              Continue to Coaches <span className="group-hover:translate-x-2 transition-transform">→</span>
             </Link>
           </div>
         </div>

@@ -11,7 +11,7 @@ import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/wagons/wli")({
   head: () => createSeoMeta({
-    title: "WLI â€“ IoT-Based Water Level Indicator | LorVen Systems",
+    title: "WLI – IoT-Based Water Level Indicator | LorVen Systems",
     description: "Real-time water-tank level measurement for passenger coaches, reported coach-wise to the CRIS server.",
     path: "/products/wagons/wli",
     structuredData: getProductSchema(
@@ -31,7 +31,7 @@ function WliRoute() {
   const features = [
     {
       title: "Hydrostatic level sensing",
-      desc: "Stainless-steel absolute-pressure transducers on the tank piping â€” for under-slung tank packs (AC/SCN) and roof tanks (non-AC); level as % of installed capacity with atmospheric-pressure compensation.",
+      desc: "Stainless-steel absolute-pressure transducers on the tank piping — for under-slung tank packs (AC/SCN) and roof tanks (non-AC); level as % of installed capacity with atmospheric-pressure compensation.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
           <path d="M12 2v20M17 5H7M19 12H5M17 19H7" strokeLinecap="round" strokeLinejoin="round" />
@@ -94,7 +94,7 @@ function WliRoute() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src={coachBuild}
-            alt="WLI â€” IoT-Based Water Level Indicator"
+            alt="WLI — IoT-Based Water Level Indicator"
             className="w-full h-full object-cover opacity-35 select-none pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent z-10" />
@@ -123,7 +123,7 @@ function WliRoute() {
             </div>
 
             <p className="text-base md:text-lg text-white/90 leading-relaxed font-light max-w-3xl border-l-2 border-steel/40 pl-6 pt-2">
-              Real-time water-tank level measurement for passenger coaches, reported coach-wise to the CRIS server â€” enabling planned watering at nominated stations and reducing en-route watering failures and passenger complaints.
+              Real-time water-tank level measurement for passenger coaches, reported coach-wise to the CRIS server — enabling planned watering at nominated stations and reducing en-route watering failures and passenger complaints.
             </p>
           </div>
         </div>
@@ -142,16 +142,16 @@ function WliRoute() {
         <div className="container-editorial grid grid-cols-12 gap-8 md:gap-16 items-center">
           {/* Left Column */}
           <div className="col-span-12 lg:col-span-7 gsap-reveal space-y-6">
-            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS â€” ROLLING STOCK</span>
+            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS — ROLLING STOCK</span>
             <h2 className="text-3xl md:text-4xl font-extralight leading-tight text-ink uppercase">
-              WLI â€” IoT-Based Water Level Indicator
+              WLI — IoT-Based Water Level Indicator
             </h2>
             <div className="border-t border-rule/20 pt-6">
               <p className="text-lg md:text-xl text-black leading-relaxed font-light">
                 Real-time water-tank level measurement for passenger coaches, reported coach-wise to the CRIS server. This enables planned watering at nominated stations, reducing en-route watering failures and passenger complaints.
               </p>
               <p className="text-sm text-ink-muted leading-relaxed font-mono uppercase tracking-wider mt-4">
-                Developed for Indian Railways â€” Specific Technical Requirement (STR) prepared for RDSO
+                Developed for Indian Railways — Specific Technical Requirement (STR) prepared for RDSO
               </p>
             </div>
           </div>
@@ -219,7 +219,7 @@ function WliRoute() {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm shadow-md"
               >
-                Consult Our Engineers â†’
+                Consult Our Engineers →
               </Link>
             </div>
           </div>

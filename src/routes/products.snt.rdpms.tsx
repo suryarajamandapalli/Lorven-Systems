@@ -11,7 +11,7 @@ import { createSeoMeta, getProductSchema } from "@/lib/seo";
 
 export const Route = createFileRoute("/products/snt/rdpms")({
   head: () => createSeoMeta({
-    title: "RDPMS â€“ Remote Diagnostic System | LorVen Systems",
+    title: "RDPMS – Remote Diagnostic System | LorVen Systems",
     description: "IoT-based condition monitoring and predictive maintenance for Indian Railways signalling assets.",
     path: "/products/snt/rdpms",
     structuredData: getProductSchema(
@@ -40,7 +40,7 @@ function RdpmsRoute() {
     },
     {
       title: "Station Gateway",
-      desc: "Edge computing with protocol converters â€” data logger, MSDAC and ELD interfaces.",
+      desc: "Edge computing with protocol converters — data logger, MSDAC and ELD interfaces.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
           <path d="M19 18H5a2 2 0 01-2-2V8a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2zM9 18v2M15 18v2M12 6V3M12 3L9 5M12 3l3 2" strokeLinecap="round" strokeLinejoin="round" />
@@ -61,7 +61,7 @@ function RdpmsRoute() {
   const additionalFeatures = [
     {
       title: "Interoperable by specification",
-      desc: "Standard data format per RDSO/SPN/257/2025 â€” works with station gateways and application software of other approved vendors.",
+      desc: "Standard data format per RDSO/SPN/257/2025 — works with station gateways and application software of other approved vendors.",
       icon: (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-6 h-6">
           <path d="M8 7h12m0 0l-4-4m4 4l-4 4m-8 6H4m0 0l4-4m-4 4l4 4" strokeLinecap="round" strokeLinejoin="round" />
@@ -102,7 +102,7 @@ function RdpmsRoute() {
         <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src={sntHero}
-            alt="RDPMS â€” Remote Diagnostic & Predictive Maintenance System"
+            alt="RDPMS — Remote Diagnostic & Predictive Maintenance System"
             className="w-full h-full object-cover opacity-35 select-none pointer-events-none"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/35 to-transparent z-10" />
@@ -131,7 +131,7 @@ function RdpmsRoute() {
             </div>
 
             <p className="text-base md:text-lg text-white/90 leading-relaxed font-light max-w-3xl border-l-2 border-steel/40 pl-6 pt-2">
-              IoT-based condition monitoring and predictive maintenance for Indian Railways signalling assets â€” diagnostic logic and AI/ML analytics generate maintenance alerts before failures occur.
+              IoT-based condition monitoring and predictive maintenance for Indian Railways signalling assets — diagnostic logic and AI/ML analytics generate maintenance alerts before failures occur.
             </p>
           </div>
         </div>
@@ -150,13 +150,13 @@ function RdpmsRoute() {
         <div className="container-editorial grid grid-cols-12 gap-8 md:gap-16 items-center">
           {/* Left Column */}
           <div className="col-span-12 lg:col-span-7 gsap-reveal space-y-6">
-            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS â€” SIGNALLING & TELECOM</span>
+            <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">PRODUCTS — SIGNALLING & TELECOM</span>
             <h2 className="text-3xl md:text-4xl font-extralight leading-tight text-ink uppercase">
-              RDPMS â€” Remote Diagnostic & Predictive Maintenance System
+              RDPMS — Remote Diagnostic & Predictive Maintenance System
             </h2>
             <div className="border-t border-rule/20 pt-6">
               <p className="text-lg md:text-xl text-black leading-relaxed font-light">
-                IoT-based condition monitoring and predictive maintenance for Indian Railways signalling assets â€” diagnostic logic and AI/ML analytics generate maintenance alerts before failures occur.
+                IoT-based condition monitoring and predictive maintenance for Indian Railways signalling assets — diagnostic logic and AI/ML analytics generate maintenance alerts before failures occur.
               </p>
               <p className="text-sm text-ink-muted leading-relaxed font-mono uppercase tracking-wider mt-4">
                 As per RDSO Specification RDSO/SPN/257/2025
@@ -208,14 +208,14 @@ function RdpmsRoute() {
                   {/* Horizontal Arrow for Desktop */}
                   {idx < 2 && (
                     <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 -right-8 z-20 text-steel pointer-events-none text-xl font-bold animate-pulse">
-                      â†’
+                      →
                     </div>
                   )}
 
                   {/* Vertical Arrow for Mobile */}
                   {idx < 2 && (
                     <div className="flex lg:hidden justify-center my-4 text-steel pointer-events-none text-lg font-bold">
-                      â†“
+                      ←“
                     </div>
                   )}
                 </div>
@@ -280,7 +280,7 @@ function RdpmsRoute() {
                 to="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 border border-white text-xs font-bold uppercase tracking-[0.2em] text-white hover:bg-white hover:text-ink transition-colors duration-300 rounded-sm shadow-md"
               >
-                Consult Our Engineers â†’
+                Consult Our Engineers →
               </Link>
             </div>
           </div>
