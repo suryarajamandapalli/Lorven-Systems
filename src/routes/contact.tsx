@@ -218,107 +218,42 @@ function ContactPage() {
       </div>
 
 
-      {/* Section 2: Split Enquiry Form & Direct Channels */}
-      <section id="enquiry-form" className="bg-bg py-10 sm:py-14 md:py-16 border-t border-rule/20">
-        <div className="container-editorial grid grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start">
+      {/* â”€â”€ SECTION 2: SPLIT ENQUIRY FORM & CONTEXT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <section id="enquiry-form" className="bg-bg py-8 sm:py-12 md:py-16 border-t border-rule/20">
+        <div className="container-editorial grid grid-cols-12 gap-8 lg:gap-16 items-start">
           
-          {/* Left Column: Direct Channels & Engineering Consultation Info */}
-          <div className="col-span-12 lg:col-span-5 gsap-reveal space-y-6">
-            <div className="space-y-3">
+          {/* Left Column: Context */}
+          <div className="col-span-12 lg:col-span-5 gsap-reveal space-y-6 sm:space-y-8">
+            <div className="space-y-3 sm:space-y-4">
               <span className="eyebrow block text-steel font-bold tracking-widest text-xs uppercase">GET IN TOUCH</span>
-              <h2 className="text-2xl sm:text-3xl font-light leading-tight text-ink uppercase">
-                Direct Engineering Consultation
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extralight leading-tight text-ink uppercase">
+                Start Your Engineering Enquiry
               </h2>
-              <p className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
-                LorVen Systems engineers review every project inquiry directly to evaluate technical feasibility, specification requirements, and implementation timelines.
-              </p>
             </div>
 
-            {/* Direct Contact Channels Box */}
-            <div className="bg-white border border-rule/20 rounded-lg p-5 sm:p-6 space-y-4 shadow-xs">
-              <span className="text-[11px] font-mono font-bold text-steel tracking-wider uppercase block">
-                Direct Contact Channels
-              </span>
+            <p className="text-sm sm:text-base text-ink-muted leading-relaxed font-light">
+              LorVen Systems engineers review every project inquiry directly to evaluate technical feasibility, specification requirements, and implementation timelines.
+            </p>
 
-              <div className="space-y-3.5 text-xs sm:text-sm text-ink-muted">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded bg-surface flex items-center justify-center shrink-0 mt-0.5 text-ink/70 border border-rule/15">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                      <polyline points="22,6 12,13 2,6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-ink/50 block">Engineering Enquiries</span>
-                    <a href="mailto:ea@lorvensystems.in" className="text-ink font-medium hover:text-steel transition-colors">
-                      ea@lorvensystems.in
-                    </a>
-                  </div>
+            {/* Reassuring Areas of Expertise */}
+            <div className="border-t border-rule/20 pt-6 sm:pt-8 space-y-5 sm:space-y-6">
+              <h3 className="text-xs font-mono font-bold text-steel tracking-widest uppercase">
+                Areas of Expertise
+              </h3>
+              <div className="space-y-4">
+                <div className="space-y-1">
+                  <h4 className="text-sm font-bold text-ink uppercase tracking-wide">Products</h4>
+                  <p className="text-xs text-ink-muted font-light leading-relaxed">
+                    WLI, IFD, IPS, RDPMS, AHABD, and Driving & KAVACH Training Simulators.
+                  </p>
                 </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded bg-surface flex items-center justify-center shrink-0 mt-0.5 text-ink/70 border border-rule/15">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-ink/50 block">Phone</span>
-                    <a href="tel:+919963666759" className="text-ink font-medium hover:text-steel transition-colors">
-                      +91 9963666759
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded bg-surface flex items-center justify-center shrink-0 mt-0.5 text-ink/70 border border-rule/15">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-ink/50 block">Tenders &amp; Procurement</span>
-                    <a href="mailto:procurement@lorvensystems.in" className="text-ink font-medium hover:text-steel transition-colors">
-                      procurement@lorvensystems.in
-                    </a>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 pt-2 border-t border-rule/10">
-                  <div className="w-8 h-8 rounded bg-surface flex items-center justify-center shrink-0 mt-0.5 text-ink/70 border border-rule/15">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <circle cx="12" cy="12" r="10" />
-                      <polyline points="12 6 12 12 16 14" />
-                    </svg>
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-ink/50 block">Operating Hours</span>
-                    <p className="text-ink font-medium text-xs">Mon – Sat | 09:00 – 18:00 IST</p>
-                  </div>
+                <div className="space-y-1">
+                  <h4 className="text-sm font-bold text-ink uppercase tracking-wide">Services</h4>
+                  <p className="text-xs text-ink-muted font-light leading-relaxed">
+                    Electronic Product Development (EPD), Signalling Design, KAVACH Installation & Commissioning, S&T System Integration, and Electronics Manufacturing Services (EMS).
+                  </p>
                 </div>
               </div>
-            </div>
-
-            {/* Response Commitment & Turnaround */}
-            <div className="bg-section border border-rule/20 rounded-lg p-5 space-y-3">
-              <span className="text-[11px] font-mono font-bold text-steel tracking-wider uppercase block">
-                Engineering Response Protocol
-              </span>
-              <ul className="space-y-2 text-xs text-ink-muted font-light leading-relaxed">
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5 shrink-0" />
-                  <span>Technical feasibility and timeline response within <strong>24 business hours</strong>.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-steel mt-1.5 shrink-0" />
-                  <span>Direct technical discussion with senior domain specialists and RDSO-aligned engineers.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-steel mt-1.5 shrink-0" />
-                  <span>Secure bilateral NDA available for proprietary specification exchange.</span>
-                </li>
-              </ul>
             </div>
           </div>
 
@@ -535,27 +470,65 @@ function ContactPage() {
         </div>
       </section>
 
-      {/* ── SECTION 3: CORPORATE HEADQUARTERS & GOOGLE MAP ─────────────────────── */}
-      <section id="office-location" className="bg-section py-12 sm:py-16 md:py-20 border-t border-rule/20">
-        <div className="container-editorial space-y-8 sm:space-y-10">
-          <div className="gsap-reveal flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-rule/20">
-            <div className="space-y-2">
+      {/* â”€â”€ SECTION 3: CLEAN HORIZONTAL CONTACT STRIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <section className="bg-bg py-10 sm:py-16 border-t border-rule/20">
+        <div className="container-editorial">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-rule/20 gsap-reveal">
+            
+            {/* Column 1 */}
+            <div className="space-y-3 pt-4 first:pt-0 md:pt-0 md:pr-8">
               <span className="text-xs font-mono font-bold text-steel tracking-widest uppercase block">
-                HEADQUARTERS
+                CORPORATE OFFICE
               </span>
-              <h2 className="text-2xl sm:text-3xl font-light text-ink uppercase">
-                LorVen Systems Pvt. Ltd.
-              </h2>
+              <h3 className="text-base sm:text-lg font-bold text-ink uppercase">LorVen Systems Pvt. Ltd.</h3>
+              <div className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light space-y-1">
+                <p>Zona Crescent, 8-682/B1 & B2, Road No. 12,</p>
+                <p>Banjara Hills, Hyderabad, Telangana – 500034</p>
+                <p className="text-xs text-steel font-medium pt-1">Landmark: Zona Towers Building, 2nd Floor, Beside Ratnadeep</p>
+              </div>
             </div>
-            <div className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light max-w-lg">
-              <p className="font-medium text-ink">Zona Crescent, 8-682/B1 &amp; B2, Road No. 12,</p>
-              <p>Banjara Hills, Hyderabad, Telangana – 500034</p>
-              <p className="text-xs text-steel font-medium mt-0.5">Landmark: Zona Towers Building, 2nd Floor, Beside Ratnadeep</p>
+
+            {/* Column 2 */}
+            <div className="space-y-3 pt-6 md:pt-0 md:px-8">
+              <span className="text-xs font-mono font-bold text-steel tracking-widest uppercase block">
+                ENGINEERING ENQUIRIES
+              </span>
+              <div className="space-y-1 text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
+                <p>Email: <a href="mailto:ea@lorvensystems.in" className="text-ink font-semibold hover:text-steel transition-colors">ea@lorvensystems.in</a></p>
+                <p>Phone: <a href="tel:+919963666759" className="text-ink font-semibold hover:text-steel transition-colors">+91 9963666759</a></p>
+              </div>
+            </div>
+
+            {/* Column 3 */}
+            <div className="space-y-3 pt-6 md:pt-0 md:pl-8">
+              <span className="text-xs font-mono font-bold text-steel tracking-widest uppercase block">
+                BUSINESS ENQUIRIES
+              </span>
+              <div className="space-y-1 text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
+                <p>Tenders: <a href="mailto:procurement@lorvensystems.in" className="text-ink font-semibold hover:text-steel transition-colors">procurement@lorvensystems.in</a></p>
+                <p>Hours: Mon – Sat | 09:00 – 18:00 IST</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* â”€â”€ SECTION 4: OFFICE LOCATION & GOOGLE MAP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <section id="office-location" className="bg-section py-12 sm:py-16 md:py-20 border-t border-rule/20">
+        <div className="container-editorial space-y-8 sm:space-y-12">
+          <div className="gsap-reveal space-y-2.5 sm:space-y-3 max-w-3xl">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-snug text-ink uppercase">
+              Office Location
+            </h2>
+            <div className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
+              <p>Zona Crescent, 8-682/B1 & B2, Road No. 12, Banjara Hills, Hyderabad, Telangana – 500034</p>
+              <p className="text-xs text-steel font-medium mt-1">Landmark: Zona Towers Building, 2nd Floor, Beside Ratnadeep</p>
             </div>
           </div>
 
           {/* Interactive Google Map Embed */}
-          <div className="relative w-full h-[320px] sm:h-[380px] md:h-[420px] bg-surface rounded-xl sm:rounded border border-rule/20 overflow-hidden shadow-sm gsap-reveal">
+          <div className="relative w-full h-[320px] sm:h-[400px] md:h-[450px] bg-surface rounded-xl sm:rounded border border-rule/20 overflow-hidden shadow-sm gsap-reveal">
             <iframe
               title="LorVen Systems Corporate Headquarters - Banjara Hills, Hyderabad"
               src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3807.074866871989!2d78.4390556!3d17.4081944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTfCsDI0JzI5LjUiTiA3OMKwMjYnMjAuNiJF!5e0!3m2!1sen!2sin!4v1785423207526!5m2!1sen!2sin"
