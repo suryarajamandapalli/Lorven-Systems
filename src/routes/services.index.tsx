@@ -26,75 +26,47 @@ export const Route = createFileRoute("/services/")({
 
 interface ServiceCardData {
   slug: string;
-  number: string;
-  badge: string;
-  category: string;
   title: string;
   blurb: string;
   image: string;
-  highlights: string[];
 }
 
 const SERVICES: ServiceCardData[] = [
   {
     slug: "product-dev",
-    number: "S/01",
-    badge: "Hardware & Firmware",
-    category: "Engineering & Design",
     title: "Electronic Product Development",
-    blurb: "End-to-end embedded hardware engineering, fail-safe architecture, and rapid prototyping for safety-critical railway applications.",
+    blurb: "Embedded hardware design, firmware development, and rapid prototyping for safety-critical railway systems.",
     image: epdImg,
-    highlights: ["Safety Integrity SIL-2/4", "Microcontroller & FPGA", "Ruggedized Thermal Layouts"],
   },
   {
     slug: "signalling-design",
-    number: "S/02",
-    badge: "RDSO / Railway CAD",
-    category: "Engineering & Design",
     title: "Signalling Design Services",
-    blurb: "Complete engineering design deliverables including Signalling Interlocking Plans (SIP), wiring diagrams, and track circuit interface circuits.",
+    blurb: "Engineering design deliverables including signalling interlocking plans (SIP), wiring diagrams, and layout schematics.",
     image: signallingImg,
-    highlights: ["SIP & Table of Control", "Route Relay Interlocking", "Electronic Interlocking (EI)"],
   },
   {
     slug: "kavach-installation",
-    number: "S/03",
-    badge: "Onboard & Trackside",
-    category: "Turnkey Installations",
     title: "KAVACH Installation & Commissioning",
-    blurb: "Certified locomotive and wayside installation per RDSO/SPN/196/2020 specifications, including RFID track profiling and brake interface testing.",
+    blurb: "Certified onboard locomotive and trackside equipment installation, RFID placement, and verification testing.",
     image: kavachImg,
-    highlights: ["Loco Cab Fitting (WAP/WAG)", "Trackside RFID Programming", "Station Vital Unit Interface"],
   },
   {
     slug: "system-integration",
-    number: "S/04",
-    badge: "Telecom & Power",
-    category: "Turnkey Installations",
     title: "S&T System Integration",
-    blurb: "Seamless integration across disparate signalling, telemetry, OFC networks, and uninterrupted power supply infrastructures.",
+    blurb: "End-to-end integration across signalling gears, telemetry channels, optical fiber backbones, and power systems.",
     image: integrationImg,
-    highlights: ["Data Logger & RTU Networks", "OFC Telemetry Backbones", "Dual-Redundant Power Racks"],
   },
   {
     slug: "ems",
-    number: "S/05",
-    badge: "IPC Class 3 SMT",
-    category: "Manufacturing & Field",
     title: "Electronics Manufacturing Services",
-    blurb: "High-precision SMT and THT assembly, conformal coating, automated optical inspection (AOI), and environmental stress testing.",
+    blurb: "High-precision SMT and THT assembly, conformal coating, automated optical inspection, and stress screening.",
     image: emsImg,
-    highlights: ["Automated Pick & Place", "100% AOI & X-Ray Inspection", "Burn-in Environmental Chambers"],
   },
   {
     slug: "testing-commissioning",
-    number: "S/06",
-    badge: "Field Safety & Block",
-    category: "Manufacturing & Field",
     title: "Installation, Testing & Commissioning",
-    blurb: "Full-lifecycle turnkey execution under active railway traffic block windows with complete CRS safety documentation.",
+    blurb: "Turnkey field installation, point machine testing, and safety certification under active railway traffic block windows.",
     image: commissioningImg,
-    highlights: ["Traffic Block Night Works", "Point Machine & Track Circuits", "Joint Acceptance Inspections"],
   },
 ];
 
@@ -136,33 +108,17 @@ function ServicesIndex() {
         ]}
       />
 
-      {/* Sleek 3-Column Modern Engineering Grid */}
+      {/* Clean 3-Column Minimal Grid */}
       <section className="bg-bg py-12 md:py-16">
         <div className="container-editorial">
-          {/* Section Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-rule/20 gap-4">
-            <div>
-              <span className="text-[11px] font-mono font-semibold tracking-[0.2em] text-accent uppercase block mb-1">
-                Capability Matrix
-              </span>
-              <h2 className="text-2xl md:text-3xl font-medium tracking-tight text-ink">
-                Turnkey Railway Engineering & Manufacturing
-              </h2>
-            </div>
-            <p className="text-xs md:text-sm text-ink-muted max-w-md font-normal leading-relaxed">
-              From embedded design and IPC Class 3 SMT assembly to turnkey trackside installation under active traffic blocks.
-            </p>
-          </div>
-
-          {/* 3-Column Compact Card Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {SERVICES.map((s) => (
               <Link
                 key={s.slug}
                 to={`/services/${s.slug}`}
-                className="gsap-reveal group/card flex flex-col bg-white rounded-lg border border-rule/15 hover:border-accent/40 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer"
+                className="gsap-reveal group/card flex flex-col bg-white rounded-lg border border-rule/15 hover:border-rule/40 shadow-xs hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer"
               >
-                {/* Cinematic Image Header */}
+                {/* Image Tile */}
                 <div className="relative aspect-[16/10] overflow-hidden bg-surface">
                   <img
                     src={s.image}
@@ -170,51 +126,23 @@ function ServicesIndex() {
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover/card:scale-105 select-none"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                  
-                  {/* Top Badges */}
-                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
-                    <span className="text-[10px] font-mono font-bold tracking-wider px-2 py-0.5 rounded bg-black/70 text-white backdrop-blur-xs border border-white/10">
-                      {s.number}
-                    </span>
-                    <span className="text-[9px] font-mono font-semibold tracking-wider uppercase px-2 py-0.5 rounded bg-accent text-white shadow-xs">
-                      {s.badge}
-                    </span>
-                  </div>
-
-                  {/* Bottom Category Tag */}
-                  <div className="absolute bottom-3 left-3">
-                    <span className="text-[11px] font-medium text-white/90 drop-shadow-xs">
-                      {s.category}
-                    </span>
-                  </div>
                 </div>
 
-                {/* Content Body */}
-                <div className="p-5 md:p-6 flex flex-col flex-grow justify-between bg-white">
+                {/* Card Content (Title + Little Matter) */}
+                <div className="p-6 flex flex-col flex-grow justify-between bg-white">
                   <div>
-                    <h3 className="text-base md:text-lg font-semibold text-ink group-hover/card:text-accent transition-colors leading-snug">
+                    <h3 className="text-lg font-semibold text-ink group-hover/card:text-steel transition-colors leading-snug">
                       {s.title}
                     </h3>
-                    <p className="mt-2 text-xs md:text-sm text-ink-muted leading-relaxed line-clamp-3">
+                    <p className="mt-2.5 text-xs md:text-sm text-ink-muted leading-relaxed font-light">
                       {s.blurb}
                     </p>
-
-                    {/* Technical Highlights */}
-                    <div className="mt-4 pt-3 border-t border-rule/10 space-y-1.5">
-                      {s.highlights.map((h, hIdx) => (
-                        <div key={hIdx} className="flex items-center text-[11px] text-ink/75">
-                          <span className="w-1.5 h-1.5 rounded-full bg-accent/60 mr-2 shrink-0" />
-                          <span className="truncate">{h}</span>
-                        </div>
-                      ))}
-                    </div>
                   </div>
 
-                  {/* Footer Action */}
-                  <div className="mt-5 pt-3.5 flex items-center justify-between border-t border-rule/10">
-                    <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-ink/50 group-hover/card:text-accent transition-colors">
-                      View Service Spec
+                  {/* Subtle Action Link */}
+                  <div className="mt-6 pt-4 flex items-center justify-between border-t border-rule/10">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-ink/40 group-hover/card:text-ink transition-colors">
+                      Learn More
                     </span>
                     <svg
                       width="16"
@@ -223,7 +151,7 @@ function ServicesIndex() {
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
-                      className="text-accent -translate-x-1 opacity-70 group-hover/card:opacity-100 group-hover/card:translate-x-0.5 transition-all duration-200"
+                      className="text-ink/50 -translate-x-1 opacity-60 group-hover/card:opacity-100 group-hover/card:translate-x-0.5 transition-all duration-200"
                     >
                       <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
