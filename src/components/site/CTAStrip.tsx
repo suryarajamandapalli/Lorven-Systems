@@ -12,8 +12,8 @@ export function CTAStrip({
   cta?: string;
 }) {
   return (
-    <section className="border-t border-rule bg-bg">
-      <div className="container-editorial grid grid-cols-12 gap-8 py-24 md:py-32">
+    <section className="border-t border-rule/15 bg-bg">
+      <div className="container-editorial grid grid-cols-12 gap-6 md:gap-8 py-12 md:py-16">
         <div className="col-span-12 md:col-span-3">
           <span className="eyebrow">{eyebrow}</span>
         </div>
