@@ -236,11 +236,11 @@ function ContactPage() {
             </p>
 
             {/* Reassuring Areas of Expertise */}
-            <div className="border-t border-rule/20 pt-6 sm:pt-8 space-y-5 sm:space-y-6">
+            <div className="border-t border-rule/20 pt-5 space-y-4">
               <h3 className="text-xs font-mono font-bold text-steel tracking-widest uppercase">
                 Areas of Expertise
               </h3>
-              <div className="space-y-4">
+              <div className="space-y-3">
                 <div className="space-y-1">
                   <h4 className="text-sm font-bold text-ink uppercase tracking-wide">Products</h4>
                   <p className="text-xs text-ink-muted font-light leading-relaxed">
@@ -252,6 +252,29 @@ function ContactPage() {
                   <p className="text-xs text-ink-muted font-light leading-relaxed">
                     Electronic Product Development (EPD), Signalling Design, KAVACH Installation & Commissioning, S&T System Integration, and Electronics Manufacturing Services (EMS).
                   </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Direct Contact Enquiries */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-4 pt-2">
+              <div className="border-t border-rule/20 pt-4 space-y-1.5">
+                <span className="text-xs font-mono font-bold text-steel tracking-widest uppercase block">
+                  ENGINEERING ENQUIRIES
+                </span>
+                <div className="space-y-0.5 text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
+                  <p>Email: <a href="mailto:ea@lorvensystems.in" className="text-ink font-semibold hover:text-steel transition-colors">ea@lorvensystems.in</a></p>
+                  <p>Phone: <a href="tel:+919963666759" className="text-ink font-semibold hover:text-steel transition-colors">+91 9963666759</a></p>
+                </div>
+              </div>
+
+              <div className="border-t border-rule/20 pt-4 space-y-1.5">
+                <span className="text-xs font-mono font-bold text-steel tracking-widest uppercase block">
+                  BUSINESS ENQUIRIES
+                </span>
+                <div className="space-y-0.5 text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
+                  <p>Tenders: <a href="mailto:procurement@lorvensystems.in" className="text-ink font-semibold hover:text-steel transition-colors">procurement@lorvensystems.in</a></p>
+                  <p>Hours: Mon – Sat | 09:00 – 18:00 IST</p>
                 </div>
               </div>
             </div>
@@ -470,60 +493,22 @@ function ContactPage() {
         </div>
       </section>
 
-      {/* â”€â”€ SECTION 3: CLEAN HORIZONTAL CONTACT STRIP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section className="bg-bg py-10 sm:py-16 border-t border-rule/20">
-        <div className="container-editorial">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 divide-y md:divide-y-0 md:divide-x divide-rule/20 gsap-reveal">
-            
-            {/* Column 1 */}
-            <div className="space-y-3 pt-4 first:pt-0 md:pt-0 md:pr-8">
+      {/* Section 3: Corporate Office Location & Interactive Map */}
+      <section id="office-location" className="bg-section py-12 sm:py-16 md:py-20 border-t border-rule/20">
+        <div className="container-editorial space-y-8 sm:space-y-10">
+          <div className="gsap-reveal flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-rule/20">
+            <div className="space-y-2">
               <span className="text-xs font-mono font-bold text-steel tracking-widest uppercase block">
                 CORPORATE OFFICE
               </span>
-              <h3 className="text-base sm:text-lg font-bold text-ink uppercase">LorVen Systems Pvt. Ltd.</h3>
-              <div className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light space-y-1">
-                <p>Zona Crescent, 8-682/B1 & B2, Road No. 12,</p>
-                <p>Banjara Hills, Hyderabad, Telangana – 500034</p>
-                <p className="text-xs text-steel font-medium pt-1">Landmark: Zona Towers Building, 2nd Floor, Beside Ratnadeep</p>
-              </div>
+              <h2 className="text-2xl sm:text-3xl font-light text-ink uppercase">
+                LorVen Systems Pvt. Ltd.
+              </h2>
             </div>
-
-            {/* Column 2 */}
-            <div className="space-y-3 pt-6 md:pt-0 md:px-8">
-              <span className="text-xs font-mono font-bold text-steel tracking-widest uppercase block">
-                ENGINEERING ENQUIRIES
-              </span>
-              <div className="space-y-1 text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
-                <p>Email: <a href="mailto:ea@lorvensystems.in" className="text-ink font-semibold hover:text-steel transition-colors">ea@lorvensystems.in</a></p>
-                <p>Phone: <a href="tel:+919963666759" className="text-ink font-semibold hover:text-steel transition-colors">+91 9963666759</a></p>
-              </div>
-            </div>
-
-            {/* Column 3 */}
-            <div className="space-y-3 pt-6 md:pt-0 md:pl-8">
-              <span className="text-xs font-mono font-bold text-steel tracking-widest uppercase block">
-                BUSINESS ENQUIRIES
-              </span>
-              <div className="space-y-1 text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
-                <p>Tenders: <a href="mailto:procurement@lorvensystems.in" className="text-ink font-semibold hover:text-steel transition-colors">procurement@lorvensystems.in</a></p>
-                <p>Hours: Mon – Sat | 09:00 – 18:00 IST</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* â”€â”€ SECTION 4: OFFICE LOCATION & GOOGLE MAP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
-      <section id="office-location" className="bg-section py-12 sm:py-16 md:py-20 border-t border-rule/20">
-        <div className="container-editorial space-y-8 sm:space-y-12">
-          <div className="gsap-reveal space-y-2.5 sm:space-y-3 max-w-3xl">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light leading-snug text-ink uppercase">
-              Office Location
-            </h2>
-            <div className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light">
-              <p>Zona Crescent, 8-682/B1 & B2, Road No. 12, Banjara Hills, Hyderabad, Telangana – 500034</p>
-              <p className="text-xs text-steel font-medium mt-1">Landmark: Zona Towers Building, 2nd Floor, Beside Ratnadeep</p>
+            <div className="text-xs sm:text-sm text-ink-muted leading-relaxed font-light max-w-lg">
+              <p className="font-medium text-ink">Zona Crescent, 8-682/B1 &amp; B2, Road No. 12,</p>
+              <p>Banjara Hills, Hyderabad, Telangana – 500034</p>
+              <p className="text-xs text-steel font-medium mt-0.5">Landmark: Zona Towers Building, 2nd Floor, Beside Ratnadeep</p>
             </div>
           </div>
 
